@@ -1,7 +1,7 @@
 title: Lorenzini
 description: "Software-Inspired Discipline for Capital — Investment Architecture Engineered for Discipline."
-baseurl: ""
-url: ""
+baseurl: "/SIDC"
+url: "https://abraxasq.github.io"
 
 markdown: kramdown
 highlighter: rouge

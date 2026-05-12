@@ -194,6 +194,50 @@ hr.rule {
   align-items: center;
 }
 
+/* Centered hero (wordmark + illustration on top, copy below) */
+.hero-centered {
+  padding: 3rem 0 4rem;
+  text-align: center;
+}
+.hero-illustration {
+  max-width: 920px;
+  margin: 0 auto 2.5rem;
+}
+.hero-caption {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.hero-caption .hero-tagline {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--caption);
+  margin-bottom: 1.25rem;
+}
+.hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.6vw, 2.75rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.25rem;
+}
+.hero-headline em { font-style: italic; color: var(--ink-light); }
+.hero-caption .hero-body {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--ink-light);
+  margin-bottom: 2rem;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-caption .hero-actions {
+  justify-content: center;
+}
+
 .hero-tagline {
   font-family: var(--font-ui);
   font-size: 0.75rem;
