@@ -1,0 +1,152 @@
+---
+layout: workspace
+title: "Stage 2: Architecture & Design"
+stage_title: "Architecture & Design"
+stage_num: 2
+---
+
+<div class="stage-workspace">
+
+  <div class="grid-2" style="gap:3rem;">
+
+    <!-- Left: Allocation Editor -->
+    <div>
+      <p class="subhead mb-3">Asset Allocation Blueprint</p>
+
+      <!-- Allocation bars -->
+      <div style="margin-bottom:2rem;">
+        <div class="alloc-bar-row">
+          <span class="alloc-bar-label">Stocks</span>
+          <div class="alloc-bar-track">
+            <div class="alloc-bar-fill" data-asset="stocks" style="width:50%;background:var(--data-blue);"></div>
+          </div>
+          <span class="alloc-val data-val" data-asset="stocks">50%</span>
+        </div>
+        <input type="range" class="form-range alloc-slider" data-asset="stocks" min="0" max="100" value="50" style="margin-bottom:1rem;">
+
+        <div class="alloc-bar-row">
+          <span class="alloc-bar-label">Bonds</span>
+          <div class="alloc-bar-track">
+            <div class="alloc-bar-fill" data-asset="bonds" style="width:30%;background:var(--ink);"></div>
+          </div>
+          <span class="alloc-val data-val" data-asset="bonds">30%</span>
+        </div>
+        <input type="range" class="form-range alloc-slider" data-asset="bonds" min="0" max="100" value="30" style="margin-bottom:1rem;">
+
+        <div class="alloc-bar-row">
+          <span class="alloc-bar-label">Cash</span>
+          <div class="alloc-bar-track">
+            <div class="alloc-bar-fill" data-asset="cash" style="width:15%;background:#B3B3B3;"></div>
+          </div>
+          <span class="alloc-val data-val" data-asset="cash">15%</span>
+        </div>
+        <input type="range" class="form-range alloc-slider" data-asset="cash" min="0" max="100" value="15" style="margin-bottom:1rem;">
+
+        <div class="alloc-bar-row">
+          <span class="alloc-bar-label">Alternatives</span>
+          <div class="alloc-bar-track">
+            <div class="alloc-bar-fill" data-asset="alts" style="width:5%;background:var(--accent);"></div>
+          </div>
+          <span class="alloc-val data-val" data-asset="alts">5%</span>
+        </div>
+        <input type="range" class="form-range alloc-slider" data-asset="alts" min="0" max="100" value="5">
+      </div>
+
+      <!-- Total check -->
+      <div style="padding:0.75rem 1rem;background:var(--paper);display:flex;justify-content:space-between;align-items:center;border:1px solid var(--rule);">
+        <span class="caption" style="font-weight:600;">Total Allocation</span>
+        <span class="data-val" style="font-size:1.125rem;color:var(--success);">100%</span>
+      </div>
+
+      <!-- Chart.js allocation chart -->
+      <div class="chart-container mt-4" style="height:200px;">
+        <canvas id="allocationChart"></canvas>
+      </div>
+
+      <div style="display:flex;gap:0.75rem;margin-top:1.5rem;">
+        <button class="btn btn-primary">Save Blueprint ↓</button>
+        <a href="stage-3.html" class="btn btn-outline">Advance →</a>
+      </div>
+    </div>
+
+    <!-- Right: Correlation Heatmap -->
+    <div>
+      <p class="subhead mb-3">Asset Correlation Matrix</p>
+      <p class="body-text mb-3" style="font-size:0.875rem;">Correlation coefficients between asset classes. Aim for low or negative correlations across your core holdings to reduce portfolio volatility.</p>
+
+      <div style="overflow-x:auto;">
+        <table class="corr-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Stocks</th>
+              <th>Bonds</th>
+              <th>Cash</th>
+              <th>Alts</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="corr-row-label">Stocks</td>
+              <td style="background:#1A1A1A;color:white;font-family:var(--font-data);font-size:0.8125rem;">1.00</td>
+              <td style="background:#9FB7D8;color:white;font-family:var(--font-data);font-size:0.8125rem;">−0.32</td>
+              <td style="background:#F3F1EE;color:#1A1A1A;font-family:var(--font-data);font-size:0.8125rem;">0.05</td>
+              <td style="background:#E8C0C7;color:#1A1A1A;font-family:var(--font-data);font-size:0.8125rem;">0.41</td>
+            </tr>
+            <tr>
+              <td class="corr-row-label">Bonds</td>
+              <td style="background:#9FB7D8;color:white;font-family:var(--font-data);font-size:0.8125rem;">−0.32</td>
+              <td style="background:#1A1A1A;color:white;font-family:var(--font-data);font-size:0.8125rem;">1.00</td>
+              <td style="background:#F3F1EE;color:#1A1A1A;font-family:var(--font-data);font-size:0.8125rem;">0.12</td>
+              <td style="background:#BCCFE3;color:#1A1A1A;font-family:var(--font-data);font-size:0.8125rem;">−0.18</td>
+            </tr>
+            <tr>
+              <td class="corr-row-label">Cash</td>
+              <td style="background:#F3F1EE;color:#1A1A1A;font-family:var(--font-data);font-size:0.8125rem;">0.05</td>
+              <td style="background:#F3F1EE;color:#1A1A1A;font-family:var(--font-data);font-size:0.8125rem;">0.12</td>
+              <td style="background:#1A1A1A;color:white;font-family:var(--font-data);font-size:0.8125rem;">1.00</td>
+              <td style="background:#F8F7F5;color:#1A1A1A;font-family:var(--font-data);font-size:0.8125rem;">0.03</td>
+            </tr>
+            <tr>
+              <td class="corr-row-label">Alts</td>
+              <td style="background:#E8C0C7;color:#1A1A1A;font-family:var(--font-data);font-size:0.8125rem;">0.41</td>
+              <td style="background:#BCCFE3;color:#1A1A1A;font-family:var(--font-data);font-size:0.8125rem;">−0.18</td>
+              <td style="background:#F8F7F5;color:#1A1A1A;font-family:var(--font-data);font-size:0.8125rem;">0.03</td>
+              <td style="background:#1A1A1A;color:white;font-family:var(--font-data);font-size:0.8125rem;">1.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="display:flex;gap:1.5rem;margin-top:0.875rem;">
+        <div style="display:flex;align-items:center;gap:0.5rem;">
+          <div style="width:20px;height:12px;background:#9FB7D8;"></div>
+          <span class="caption">Negative correlation (diversifying)</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.5rem;">
+          <div style="width:20px;height:12px;background:#E8C0C7;"></div>
+          <span class="caption">Positive correlation (concentrated risk)</span>
+        </div>
+      </div>
+
+      <!-- Insight -->
+      <div style="margin-top:1.5rem;padding:1rem 1.25rem;border-left:3px solid var(--data-blue);background:#EEF2FA;">
+        <p style="font-size:0.8125rem;color:var(--data-blue);font-weight:600;margin-bottom:0.375rem;">Architecture insight</p>
+        <p style="font-size:0.8125rem;color:var(--ink-light);line-height:1.5;">Stocks/Bonds correlation of <strong>−0.32</strong> provides meaningful diversification. The Stocks/Alternatives correlation of <strong>0.41</strong> is elevated — consider reducing alternatives exposure if drawdown protection is a priority.</p>
+      </div>
+
+      <!-- Blueprint export -->
+      <div style="margin-top:1.5rem;padding:1.25rem;border:1px solid var(--rule);background:var(--paper);">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;">
+          <p style="font-size:0.875rem;font-weight:600;">Blueprint v0.4</p>
+          <span style="font-size:0.6875rem;color:var(--caption);">Draft · Nov 10, 2024</span>
+        </div>
+        <div style="display:flex;gap:0.75rem;">
+          <button class="btn btn-outline btn-sm">↓ Export Blueprint PDF</button>
+          <button class="btn btn-outline btn-sm">↓ Export CSV</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

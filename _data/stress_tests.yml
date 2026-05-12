@@ -1,0 +1,36 @@
+scenarios:
+  - name: "2008 Global Financial Crisis"
+    short: "2008 GFC"
+    period: "Sep 2008 — Mar 2009"
+    strategy: -18.2
+    benchmark: -38.5
+    recovery_months: 14
+    status: "protected"
+  - name: "2020 COVID-19 Crash"
+    short: "2020 COVID"
+    period: "Feb 2020 — Mar 2020"
+    strategy: -12.4
+    benchmark: -33.9
+    recovery_months: 5
+    status: "protected"
+  - name: "2022 Fed Rate Hike Cycle"
+    short: "2022 Rates"
+    period: "Jan 2022 — Dec 2022"
+    strategy: -7.8
+    benchmark: -19.4
+    recovery_months: 11
+    status: "protected"
+  - name: "2000 Dot-Com Bubble Burst"
+    short: "2000 Dot-com"
+    period: "Mar 2000 — Oct 2002"
+    strategy: -8.1
+    benchmark: -49.1
+    recovery_months: 18
+    status: "protected"
+  - name: "Custom -20% Drawdown Scenario"
+    short: "Custom −20%"
+    period: "Hypothetical"
+    strategy: -14.3
+    benchmark: null
+    recovery_months: 16
+    status: "modeled"

@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<div class="workspace-header">
+  <div class="container">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;">
+      <div>
+        <p class="subhead">SIDC Workspace</p>
+        <h1 class="display-md" style="margin-top:0.5rem;">{% if page.stage_title %}{{ page.stage_title }}{% else %}{{ page.title }}{% endif %}</h1>
+      </div>
+      <div style="display:flex;gap:1rem;align-items:center;">
+        {% if page.stage_num %}
+        <span class="stage-badge">Stage {{ page.stage_num }}</span>
+        {% endif %}
+        <a href="workspace.html" class="btn btn-outline btn-sm">← Dashboard</a>
+      </div>
+    </div>
+    {% include stage-nav.html %}
+  </div>
+</div>
+
+<div class="container">
+  {{ content }}
+</div>

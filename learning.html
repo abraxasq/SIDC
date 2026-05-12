@@ -1,0 +1,155 @@
+---
+layout: default
+title: "Learning Hub"
+---
+
+<div class="page-header">
+  <div class="container">
+    <p class="subhead">Learning Hub</p>
+    <h1 class="display-md" style="margin-top:0.5rem;">Master the SIDC Method</h1>
+    <p class="body-text mt-2">In-depth guides, case studies, and a complete glossary to help you apply software engineering discipline to your investments.</p>
+  </div>
+</div>
+
+<!-- Featured Article -->
+<div class="container">
+  <div class="article-featured">
+    <div>
+      <p class="article-tag" style="color:var(--data-blue);">METHODOLOGY</p>
+      <h2 class="article-title">Why Your Portfolio Has Technical Debt</h2>
+      <p class="article-excerpt">Every undocumented assumption in your strategy is a bug waiting to compound. Just as a software codebase accumulates shortcuts and workarounds that slow it down over time, portfolios accumulate undocumented decisions, emotional overrides, and untested assumptions — all of which compound until they become a structural crisis.</p>
+      <div class="article-meta">
+        <span>November 12, 2024</span>
+        <span>·</span>
+        <span>8 min read</span>
+      </div>
+      <a href="#" class="btn btn-outline btn-sm mt-3">Read Article →</a>
+    </div>
+    <div style="background:var(--paper);display:flex;align-items:center;justify-content:center;padding:3rem;font-family:var(--font-display);font-size:3rem;font-weight:400;color:var(--rule);">
+      "
+    </div>
+  </div>
+</div>
+
+<hr class="rule">
+
+<!-- Article Grid -->
+<div class="container section-sm">
+  <p class="subhead mb-4">Recent Articles</p>
+  <div class="grid-3">
+
+    <div class="article-card">
+      <p class="article-tag" style="color:var(--ink);">STAGE GUIDE</p>
+      <h3 class="article-card-title">The Architecture Stage: Designing Before You Build</h3>
+      <p class="article-card-excerpt">Correlation maps and allocation blueprints reduce emotional rebalancing decisions by up to 73%. Here's how to construct one.</p>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <span class="caption">Oct 29, 2024 · 12 min</span>
+        <a href="#" class="caption" style="color:var(--data-blue);font-weight:600;">Read →</a>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <p class="article-tag" style="color:var(--accent);">CASE STUDY</p>
+      <h3 class="article-card-title">How a Careless Rebalance Cost One Investor 4 Points of CAGR</h3>
+      <p class="article-card-excerpt">A real-world walkthrough of Stage 4 QA failures, what triggered them, and how systematic testing caught the drift before it compounded.</p>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <span class="caption">Oct 8, 2024 · 10 min</span>
+        <a href="#" class="caption" style="color:var(--data-blue);font-weight:600;">Read →</a>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <p class="article-tag" style="color:var(--data-gold);">TECHNICAL</p>
+      <h3 class="article-card-title">Stress Testing: Beyond the Standard 10-Year Backtest</h3>
+      <p class="article-card-excerpt">Regime-based stress scenarios that expose the fragile assumptions hidden in every modern portfolio. How to construct and interpret them.</p>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <span class="caption">Sep 21, 2024 · 15 min</span>
+        <a href="#" class="caption" style="color:var(--data-blue);font-weight:600;">Read →</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="rule" id="glossary">
+
+<!-- Glossary -->
+<div class="container section-sm">
+  <div class="section-header">
+    <p class="subhead">Glossary</p>
+    <h2 class="display-md mt-2">SIDC Lexicon</h2>
+    <p class="body-text mt-2">Every term in the SIDC methodology — precise definition alongside plain-language translation.</p>
+  </div>
+
+  <div class="glossary-grid mt-4">
+    {% for entry in site.data.glossary %}
+    <div class="glossary-item">
+      <p class="gloss-term">{{ entry.term }}</p>
+      <p class="gloss-plain">{{ entry.plain }}</p>
+      <p class="gloss-def">{{ entry.definition }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<hr class="rule" id="faq">
+
+<!-- FAQ -->
+<div class="container section-sm" style="max-width:800px;">
+  <div class="section-header">
+    <p class="subhead">FAQ</p>
+    <h2 class="display-md mt-2">Frequently Asked Questions</h2>
+  </div>
+
+  <div class="faq-list mt-4">
+    <div class="faq-item">
+      <button class="faq-question">
+        Is SIDC a trading strategy or a financial product?
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-answer">
+        SIDC is a methodology — a structured process for designing, documenting, testing, and maintaining an investment strategy. It is not a fund, a product, or a specific set of securities. Think of it as a framework, like Agile for software development, applied to personal or institutional investing.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Do I need to be a professional investor to use SIDC?
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-answer">
+        No. SIDC is designed to be accessible to individual investors at any experience level. Stage 1 (Plan) requires only basic financial literacy. The methodology becomes progressively more technical at Stages 3–4, but every step produces a concrete output — you always know what you've accomplished.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        How long does it take to complete all 5 stages?
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-answer">
+        The first cycle typically takes 4–8 hours of focused work over 1–2 weeks. Stage 1 (Plan) is usually 1–2 hours. Stage 2 (Architecture) is 2–3 hours. Stages 3 and 4 together typically take 3–4 hours. Stage 5 (Monitoring) is ongoing — once set up, it requires 30–60 minutes per month for routine review.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        What is "portfolio technical debt" and why does it matter?
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-answer">
+        Portfolio technical debt refers to the accumulated weight of undocumented decisions, emotional overrides, and untested assumptions in your investment approach. Just like software debt, it doesn't harm you immediately — but it compounds. When a market shock arrives, debt-laden portfolios fail structurally, not just because of bad luck.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Does Lorenzini manage money or provide financial advice?
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-answer">
+        No. Lorenzini is an educational platform. All content, tools, and frameworks provided here are for informational and educational purposes only. Nothing on this site constitutes investment advice, financial planning, or portfolio management. All investment decisions are the sole responsibility of the individual investor.
+      </div>
+    </div>
+  </div>
+</div>

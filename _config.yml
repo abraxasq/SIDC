@@ -1,0 +1,19 @@
+title: Lorenzini
+description: "Software-Inspired Discipline for Capital — Investment Architecture Engineered for Discipline."
+baseurl: ""
+url: ""
+
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+plugins: []
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .git
+  - README.md

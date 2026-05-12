@@ -1,0 +1,146 @@
+<svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" aria-label="Lorenzini — Bull and Bear with Federal Reserve Building" role="img" style="width:100%;height:auto;">
+  <defs>
+    <!-- Dense dot pattern (dark areas) -->
+    <pattern id="dots-dense" x="0" y="0" width="9" height="9" patternUnits="userSpaceOnUse">
+      <circle cx="4.5" cy="4.5" r="2.8" fill="#1A1A1A"/>
+    </pattern>
+    <!-- Medium dot pattern -->
+    <pattern id="dots-med" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="2.0" fill="#1A1A1A"/>
+    </pattern>
+    <!-- Sparse dot pattern (light areas / building) -->
+    <pattern id="dots-sparse" x="0" y="0" width="11" height="11" patternUnits="userSpaceOnUse">
+      <circle cx="5.5" cy="5.5" r="1.2" fill="#1A1A1A"/>
+    </pattern>
+    <!-- Very sparse -->
+    <pattern id="dots-xs" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="7" cy="7" r="0.9" fill="#1A1A1A"/>
+    </pattern>
+
+    <!-- BULL silhouette mask (facing right, left side of image) -->
+    <mask id="bull-mask">
+      <!-- Main body -->
+      <ellipse cx="168" cy="218" rx="108" ry="74" fill="white"/>
+      <!-- Neck -->
+      <ellipse cx="262" cy="198" rx="52" ry="44" fill="white"/>
+      <!-- Head -->
+      <ellipse cx="298" cy="192" rx="42" ry="36" fill="white"/>
+      <!-- Left horn (viewer's left, pointing up-left) -->
+      <polygon points="278,162 266,128 298,168" fill="white"/>
+      <!-- Right horn (viewer's right, pointing up) -->
+      <polygon points="298,162 312,126 320,165" fill="white"/>
+      <!-- Snout / muzzle -->
+      <ellipse cx="333" cy="196" rx="22" ry="16" fill="white"/>
+      <!-- Front right leg -->
+      <rect x="255" y="265" width="30" height="72" rx="6" fill="white"/>
+      <!-- Front left leg -->
+      <rect x="212" y="263" width="30" height="70" rx="6" fill="white"/>
+      <!-- Back right leg -->
+      <rect x="120" y="262" width="30" height="72" rx="6" fill="white"/>
+      <!-- Back left leg -->
+      <rect x="78" y="264" width="30" height="68" rx="6" fill="white"/>
+      <!-- Tail (sweeps up from rear) -->
+      <path d="M 67,215 C 40,195 28,172 42,148 C 50,135 58,138 52,152" stroke="white" stroke-width="14" fill="none" stroke-linecap="round"/>
+      <!-- Dewlap / chest area -->
+      <ellipse cx="270" cy="228" rx="28" ry="22" fill="white"/>
+    </mask>
+
+    <!-- BEAR silhouette mask (facing left, right side of image) -->
+    <mask id="bear-mask">
+      <!-- Main body -->
+      <ellipse cx="634" cy="220" rx="106" ry="78" fill="white"/>
+      <!-- Shoulder hump -->
+      <ellipse cx="566" cy="185" rx="58" ry="50" fill="white"/>
+      <!-- Neck connection -->
+      <ellipse cx="532" cy="182" rx="38" ry="36" fill="white"/>
+      <!-- Head -->
+      <ellipse cx="506" cy="174" rx="46" ry="40" fill="white"/>
+      <!-- Left ear (viewer's left) -->
+      <circle cx="490" cy="142" r="18" fill="white"/>
+      <!-- Right ear -->
+      <circle cx="524" cy="138" r="17" fill="white"/>
+      <!-- Snout -->
+      <ellipse cx="470" cy="182" rx="26" ry="18" fill="white"/>
+      <!-- Front left leg (near head, viewer's left) -->
+      <rect x="536" y="262" width="32" height="70" rx="6" fill="white"/>
+      <!-- Front right leg -->
+      <rect x="576" y="266" width="32" height="66" rx="6" fill="white"/>
+      <!-- Back left leg -->
+      <rect x="674" y="261" width="32" height="70" rx="6" fill="white"/>
+      <!-- Back right leg -->
+      <rect x="714" y="264" width="32" height="66" rx="6" fill="white"/>
+      <!-- Short tail (right rear) -->
+      <circle cx="744" cy="212" r="16" fill="white"/>
+      <ellipse cx="744" cy="218" rx="14" ry="18" fill="white"/>
+    </mask>
+
+    <!-- BUILDING silhouette mask (Federal Reserve, center) -->
+    <mask id="building-mask">
+      <!-- Steps (3 tiers) -->
+      <rect x="296" y="296" width="208" height="10" fill="white"/>
+      <rect x="304" y="286" width="192" height="12" fill="white"/>
+      <rect x="312" y="276" width="176" height="12" fill="white"/>
+      <!-- Main building body -->
+      <rect x="320" y="175" width="160" height="104" fill="white"/>
+      <!-- Entablature / frieze bar -->
+      <rect x="314" y="168" width="172" height="10" fill="white"/>
+      <!-- Columns (8 columns) -->
+      <rect x="320" y="155" width="13" height="118" fill="white"/>
+      <rect x="340" y="155" width="13" height="118" fill="white"/>
+      <rect x="360" y="155" width="13" height="118" fill="white"/>
+      <rect x="380" y="155" width="13" height="118" fill="white"/>
+      <rect x="400" y="155" width="13" height="118" fill="white"/>
+      <rect x="420" y="155" width="13" height="118" fill="white"/>
+      <rect x="440" y="155" width="13" height="118" fill="white"/>
+      <rect x="460" y="155" width="13" height="118" fill="white"/>
+      <!-- Pediment (triangle) -->
+      <polygon points="308,155 400,108 492,155" fill="white"/>
+      <!-- Pediment top bar -->
+      <rect x="308" y="152" width="184" height="6" fill="white"/>
+      <!-- Dome / cupola -->
+      <ellipse cx="400" cy="106" rx="24" ry="14" fill="white"/>
+      <rect x="390" y="96" width="20" height="12" fill="white"/>
+    </mask>
+
+    <!-- Background chart spikes mask -->
+    <mask id="spikes-mask">
+      <rect x="40"  y="230" width="7" height="95" fill="white"/>
+      <rect x="55"  y="195" width="7" height="130" fill="white"/>
+      <rect x="70"  y="215" width="7" height="110" fill="white"/>
+      <rect x="90"  y="180" width="7" height="145" fill="white"/>
+      <rect x="107" y="200" width="7" height="125" fill="white"/>
+      <rect x="350" y="120" width="6" height="205" fill="white"/>
+      <rect x="363" y="140" width="6" height="185" fill="white"/>
+      <rect x="376" y="100" width="6" height="225" fill="white"/>
+      <rect x="389" y="130" width="6" height="195" fill="white"/>
+      <rect x="402" y="115" width="6" height="210" fill="white"/>
+      <rect x="415" y="145" width="6" height="180" fill="white"/>
+      <rect x="428" y="108" width="6" height="217" fill="white"/>
+      <rect x="441" y="128" width="6" height="197" fill="white"/>
+      <rect x="454" y="95"  width="6" height="230" fill="white"/>
+      <rect x="690" y="225" width="7" height="100" fill="white"/>
+      <rect x="705" y="190" width="7" height="135" fill="white"/>
+      <rect x="720" y="210" width="7" height="115" fill="white"/>
+      <rect x="738" y="178" width="7" height="147" fill="white"/>
+      <rect x="755" y="198" width="7" height="127" fill="white"/>
+    </mask>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="360" fill="#F8F6F1"/>
+
+  <!-- Background spikes (very sparse dots — faint depth) -->
+  <rect width="800" height="360" fill="url(#dots-xs)" mask="url(#spikes-mask)" opacity="0.5"/>
+
+  <!-- Building (sparse dots = lighter, more distant look) -->
+  <rect width="800" height="360" fill="url(#dots-sparse)" mask="url(#building-mask)" opacity="0.75"/>
+
+  <!-- Bull (dense dots = solid, prominent) -->
+  <rect width="800" height="360" fill="url(#dots-dense)" mask="url(#bull-mask)"/>
+
+  <!-- Bear (dense dots = solid, prominent) -->
+  <rect width="800" height="360" fill="url(#dots-dense)" mask="url(#bear-mask)"/>
+
+  <!-- Edge fade for building (medium dots overlay for depth gradient feel) -->
+  <rect x="310" y="150" width="180" height="160" fill="url(#dots-med)" mask="url(#building-mask)" opacity="0.25"/>
+</svg>

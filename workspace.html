@@ -1,0 +1,196 @@
+---
+layout: default
+title: "My SIDC Workspace"
+---
+
+<div class="workspace-header">
+  <div class="container">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:2rem;">
+      <div>
+        <p class="subhead">SIDC Workspace</p>
+        <h1 class="display-md" style="margin-top:0.5rem;">My Investment Architecture</h1>
+        <p class="body-text mt-2">Technical Debt Score: <strong style="color:var(--accent);font-family:var(--font-data);">41</strong> / 100 — <span style="color:var(--caption);">Moderate Debt · Stage 3 Active</span></p>
+      </div>
+      <a href="diagnostic.html" class="btn btn-outline btn-sm" style="flex-shrink:0;margin-top:0.5rem;">Reassess →</a>
+    </div>
+
+    <!-- Stage Progress -->
+    <div class="stage-progress">
+      <a href="stage-1.html" class="stage-step completed">
+        <div class="step-num">✓</div>
+        <div class="step-name">Plan</div>
+        <div class="step-status">Complete</div>
+      </a>
+      <a href="stage-2.html" class="stage-step completed">
+        <div class="step-num">✓</div>
+        <div class="step-name">Architecture</div>
+        <div class="step-status">Complete</div>
+      </a>
+      <a href="stage-3.html" class="stage-step active">
+        <div class="step-num">3</div>
+        <div class="step-name">Implementation</div>
+        <div class="step-status">In Progress</div>
+      </a>
+      <div class="stage-step locked">
+        <div class="step-num">4</div>
+        <div class="step-name">Testing</div>
+        <div class="step-status">Locked</div>
+      </div>
+      <div class="stage-step locked">
+        <div class="step-num">5</div>
+        <div class="step-name">Monitoring</div>
+        <div class="step-status">Locked</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="workspace-body">
+    <!-- Main content -->
+    <div>
+      <!-- Current Stage Card -->
+      <div class="current-stage-card">
+        <div class="stage-card-header">
+          <div>
+            <span class="stage-badge">Stage 3 — Active</span>
+            <h2 class="stage-card-title mt-2">Implementation & Build</h2>
+            <p class="body-text">Select strategy modules, configure rebalancing rules, and pass the unit-test checklist before unlocking Stage 4.</p>
+          </div>
+          <a href="stage-3.html" class="btn btn-primary btn-sm" style="flex-shrink:0;">Continue →</a>
+        </div>
+
+        <!-- Stage 3 quick status -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+          <div style="padding:1rem;background:var(--paper);">
+            <p class="caption mb-1">Strategy Modules</p>
+            <p class="headline data-val">2 / 3</p>
+            <p class="caption mt-1" style="color:var(--data-blue);">Selected</p>
+          </div>
+          <div style="padding:1rem;background:var(--paper);">
+            <p class="caption mb-1">Rebalancing Rule</p>
+            <p class="headline data-val">Quarterly</p>
+            <p class="caption mt-1" style="color:var(--data-blue);">5% drift trigger</p>
+          </div>
+          <div style="padding:1rem;background:var(--paper);">
+            <p class="caption mb-1">Unit Tests</p>
+            <p class="headline data-val">5 / 7</p>
+            <p class="caption mt-1" style="color:var(--warning);">2 pending</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Completed Stages Summary -->
+      <div style="margin-top:2rem;">
+        <p class="subhead mb-3">Completed Stages</p>
+        <div class="grid-2">
+          <div style="border:1px solid var(--rule);padding:1.5rem;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+              <p class="caption" style="font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">Stage 1 — Plan</p>
+              <span style="color:var(--success);font-size:0.75rem;font-weight:600;">✓ Complete</span>
+            </div>
+            <p style="font-size:0.875rem;color:var(--ink-light);line-height:1.5;">
+              CAGR Target: <strong>8.5%</strong> · MDD Limit: <strong>−20%</strong><br>
+              Horizon: <strong>15 years</strong> · Risk: <strong>Moderate</strong>
+            </p>
+            <a href="stage-1.html" class="caption" style="color:var(--data-blue);font-weight:600;display:inline-block;margin-top:0.75rem;">View Spec Sheet →</a>
+          </div>
+          <div style="border:1px solid var(--rule);padding:1.5rem;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+              <p class="caption" style="font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">Stage 2 — Architecture</p>
+              <span style="color:var(--success);font-size:0.75rem;font-weight:600;">✓ Complete</span>
+            </div>
+            <p style="font-size:0.875rem;color:var(--ink-light);line-height:1.5;">
+              Stocks: <strong>50%</strong> · Bonds: <strong>30%</strong><br>
+              Cash: <strong>15%</strong> · Alternatives: <strong>5%</strong>
+            </p>
+            <a href="stage-2.html" class="caption" style="color:var(--data-blue);font-weight:600;display:inline-block;margin-top:0.75rem;">View Blueprint →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="ws-sidebar">
+      <!-- Output Documents -->
+      <div class="sidebar-card">
+        <p class="sidebar-title">Output Documents</p>
+        <div class="doc-list">
+          <div class="doc-item">
+            <div>
+              <p class="doc-name">Spec Sheet</p>
+              <p class="doc-meta">v1.2 · Updated Nov 10</p>
+            </div>
+            <span class="doc-status done">Done</span>
+          </div>
+          <div class="doc-item">
+            <div>
+              <p class="doc-name">Portfolio Blueprint</p>
+              <p class="doc-meta">v0.4 · In progress</p>
+            </div>
+            <span class="doc-status progress">Draft</span>
+          </div>
+          <div class="doc-item" style="opacity:0.5;">
+            <div>
+              <p class="doc-name">QA Report</p>
+              <p class="doc-meta">Complete Stage 4 first</p>
+            </div>
+            <span class="doc-status locked">Locked</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Activity -->
+      <div class="sidebar-card">
+        <p class="sidebar-title">Recent Activity</p>
+        <div class="activity-item">
+          <div class="activity-dot active"></div>
+          <div>
+            <p class="activity-text">Selected Momentum & Value strategy modules</p>
+            <p class="activity-time">2 hours ago</p>
+          </div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-dot active"></div>
+          <div>
+            <p class="activity-text">Blueprint v0.4 saved — allocation updated</p>
+            <p class="activity-time">Yesterday</p>
+          </div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-dot"></div>
+          <div>
+            <p class="activity-text">Correlation heatmap reviewed — bonds at −0.32</p>
+            <p class="activity-time">Nov 9</p>
+          </div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-dot"></div>
+          <div>
+            <p class="activity-text">Spec Sheet v1.2 finalized and exported</p>
+            <p class="activity-time">Nov 8</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Next Steps -->
+      <div class="sidebar-card">
+        <p class="sidebar-title">Next Steps</p>
+        <ul style="display:flex;flex-direction:column;gap:0.625rem;">
+          <li style="font-size:0.875rem;color:var(--ink-light);display:flex;gap:0.5rem;align-items:flex-start;">
+            <span style="color:var(--data-blue);font-weight:700;flex-shrink:0;">→</span>
+            Add Low-Volatility module to complete implementation
+          </li>
+          <li style="font-size:0.875rem;color:var(--ink-light);display:flex;gap:0.5rem;align-items:flex-start;">
+            <span style="color:var(--data-blue);font-weight:700;flex-shrink:0;">→</span>
+            Complete 2 remaining unit tests
+          </li>
+          <li style="font-size:0.875rem;color:var(--ink-light);display:flex;gap:0.5rem;align-items:flex-start;">
+            <span style="color:var(--data-blue);font-weight:700;flex-shrink:0;">→</span>
+            Unlock Stage 4: Backtest & QA
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

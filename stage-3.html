@@ -1,0 +1,166 @@
+---
+layout: workspace
+title: "Stage 3: Implementation & Build"
+stage_title: "Implementation & Build"
+stage_num: 3
+---
+
+<div class="stage-workspace">
+
+  <div class="stage-ws-grid">
+    <!-- Main -->
+    <div>
+      <p class="subhead mb-3">Strategy Module Library</p>
+      <p class="body-text mb-3" style="font-size:0.875rem;">Select the strategy modules that will drive portfolio construction. Each module applies a systematic rule to security selection within your Blueprint's asset allocation.</p>
+
+      <div class="module-grid">
+        <div class="module-card active">
+          <div class="module-icon">📈</div>
+          <p class="module-name">Momentum</p>
+          <p class="module-desc">12-month trailing momentum with 1-month skip. Rank securities by performance, hold top quartile.</p>
+        </div>
+        <div class="module-card active">
+          <div class="module-icon">💎</div>
+          <p class="module-name">Value</p>
+          <p class="module-desc">Price-to-book and earnings yield composite. Targets undervalued securities with fundamental support.</p>
+        </div>
+        <div class="module-card">
+          <div class="module-icon">🛡</div>
+          <p class="module-name">Low Volatility</p>
+          <p class="module-desc">Minimum variance construction within asset class. Reduces drawdown at the cost of some upside capture.</p>
+        </div>
+        <div class="module-card">
+          <div class="module-icon">📊</div>
+          <p class="module-name">Quality</p>
+          <p class="module-desc">Return on equity, debt-to-equity, and earnings stability composite. Tilts toward durable businesses.</p>
+        </div>
+        <div class="module-card">
+          <div class="module-icon">⚖️</div>
+          <p class="module-name">Equal Weight</p>
+          <p class="module-desc">Naive diversification baseline. Equal-weight within each asset class module. Low complexity, low cost.</p>
+        </div>
+        <div class="module-card">
+          <div class="module-icon">🌐</div>
+          <p class="module-name">Global Macro</p>
+          <p class="module-desc">Top-down regime detection. Shifts allocation between growth and defensive assets based on macro signals.</p>
+        </div>
+      </div>
+
+      <p style="font-size:0.8125rem;color:var(--caption);margin-top:0.5rem;">Click a module to toggle. <strong style="color:var(--data-blue);">2 selected.</strong></p>
+
+      <hr class="rule" style="margin:2.5rem 0;">
+
+      <!-- Rebalancing Rules -->
+      <p class="subhead mb-3">Rebalancing Rules</p>
+
+      <div class="grid-2" style="gap:1.5rem;margin-bottom:1.5rem;">
+        <div class="form-group">
+          <label class="form-label">Rebalancing Frequency</label>
+          <select class="form-input">
+            <option>Monthly</option>
+            <option selected>Quarterly</option>
+            <option>Semi-Annual</option>
+            <option>Annual</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Drift Trigger Threshold</label>
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <input type="range" class="form-range" min="1" max="20" value="5">
+            <span class="data-val" style="font-size:1.125rem;font-weight:500;width:44px;">5%</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding:1rem 1.25rem;background:var(--paper);border:1px solid var(--rule);">
+        <p class="caption" style="font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;">Active Rule</p>
+        <p style="font-size:0.875rem;color:var(--ink-light);">Rebalance quarterly <em>or</em> when any asset class deviates more than <strong>5%</strong> from Blueprint target weights, whichever occurs first.</p>
+      </div>
+    </div>
+
+    <!-- Sidebar: Unit Test Checklist -->
+    <div>
+      <div class="sidebar-card">
+        <p class="sidebar-title">Unit Test Checklist</p>
+        <ul class="checklist">
+          <li>
+            <div class="check-icon checked">✓</div>
+            CAGR target is achievable given MDD tolerance (Calmar ≥ 0.43)
+          </li>
+          <li>
+            <div class="check-icon checked">✓</div>
+            Asset allocation sums to exactly 100%
+          </li>
+          <li>
+            <div class="check-icon checked">✓</div>
+            No single asset class exceeds 60% of portfolio
+          </li>
+          <li>
+            <div class="check-icon checked">✓</div>
+            Correlation between stocks and bonds is below 0.0
+          </li>
+          <li>
+            <div class="check-icon checked">✓</div>
+            Rebalancing rule is defined (frequency + drift trigger)
+          </li>
+          <li>
+            <div class="check-icon" style="border-color:var(--warning);">—</div>
+            <span>At least one defensive module selected (Low-Vol or Global Macro)</span>
+          </li>
+          <li>
+            <div class="check-icon" style="border-color:var(--warning);">—</div>
+            <span>Cash allocation ≥ 10% (liquidity buffer)</span>
+          </li>
+        </ul>
+
+        <div style="margin-top:1.25rem;padding:0.875rem;background:var(--paper);">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span class="caption" style="font-weight:600;">Tests Passed</span>
+            <span class="data-val" style="font-size:1.125rem;color:var(--warning);">5 / 7</span>
+          </div>
+          <div style="height:4px;background:var(--rule);margin-top:0.5rem;border-radius:2px;overflow:hidden;">
+            <div style="height:100%;width:71%;background:var(--warning);border-radius:2px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-top:1rem;" class="overfit-banner">
+          <span class="overfit-icon">⚠</span>
+          <p class="overfit-text"><strong>2 tests pending.</strong> Add a defensive module (Low-Vol or Global Macro) to resolve failing tests before proceeding to Stage 4.</p>
+        </div>
+
+        <button class="btn btn-primary w-full mt-3" style="justify-content:center;width:100%;">
+          Save Implementation
+        </button>
+      </div>
+
+      <!-- Rebalancing history preview -->
+      <div class="sidebar-card">
+        <p class="sidebar-title">Rebalancing History</p>
+        <div class="rebal-log">
+          <div class="rebal-item">
+            <div class="rebal-dot"></div>
+            <div>
+              <p class="rebal-date">Sep 30, 2024</p>
+              <p class="rebal-desc">Q3 rebalance — Stocks drifted +4.8%, trimmed to 50%</p>
+            </div>
+          </div>
+          <div class="rebal-item">
+            <div class="rebal-dot"></div>
+            <div>
+              <p class="rebal-date">Jun 30, 2024</p>
+              <p class="rebal-desc">Q2 rebalance — Routine, drift within 2% across all assets</p>
+            </div>
+          </div>
+          <div class="rebal-item">
+            <div class="rebal-dot"></div>
+            <div>
+              <p class="rebal-date">Apr 15, 2024</p>
+              <p class="rebal-desc">Drift trigger — Bonds drifted −5.2%, bought back to 30%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

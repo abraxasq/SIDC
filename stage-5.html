@@ -1,0 +1,185 @@
+---
+layout: workspace
+title: "Stage 5: Deployment & Monitoring"
+stage_title: "Deployment & Monitoring"
+stage_num: 5
+---
+
+<div class="stage-workspace">
+
+  <!-- Live Status Banner -->
+  <div style="display:flex;align-items:center;gap:0.75rem;padding:0.875rem 1.25rem;background:#EAF3EE;border:1px solid var(--success);margin-bottom:2rem;">
+    <span style="width:8px;height:8px;border-radius:50%;background:var(--success);display:inline-block;"></span>
+    <span style="font-size:0.8125rem;font-weight:600;color:var(--success);">Portfolio LIVE</span>
+    <span style="font-size:0.8125rem;color:var(--caption);">· Last updated: Nov 10, 2024 at 16:30 EST · All systems nominal</span>
+  </div>
+
+  <div class="stage-ws-grid">
+    <!-- Main -->
+    <div>
+
+      <!-- Current vs. Target Allocation -->
+      <p class="subhead mb-3">Current vs. Target Allocation</p>
+      <div style="display:flex;flex-direction:column;gap:1.25rem;margin-bottom:2rem;">
+        {% assign assets = "Stocks,Bonds,Cash,Alternatives" | split: "," %}
+        {% assign targets = "50,30,15,5" | split: "," %}
+        {% assign actuals = "53.2,27.8,14.1,4.9" | split: "," %}
+        {% assign colors  = "#2E5FA3,#1A1A1A,#B3B3B3,#C01933" | split: "," %}
+
+        {% for asset in assets %}
+          {% assign idx = forloop.index0 %}
+          {% assign target_val = targets[idx] | plus: 0 %}
+          {% assign actual_val = actuals[idx] | plus: 0 %}
+          {% assign diff = actual_val | minus: target_val %}
+          <div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
+              <span style="font-size:0.875rem;font-weight:500;">{{ asset }}</span>
+              <div style="display:flex;gap:1.5rem;font-size:0.8125rem;">
+                <span class="caption">Target: <strong style="color:var(--ink);">{{ target_val }}%</strong></span>
+                <span class="caption">Current: <strong style="color:{{ colors[idx] }};">{{ actual_val }}%</strong></span>
+                <span class="caption" style="color:{% if diff > 2 or diff < -2 %}var(--warning){% else %}var(--success){% endif %};">
+                  {% if diff > 0 %}+{% endif %}{{ diff }}%
+                </span>
+              </div>
+            </div>
+            <div style="position:relative;height:8px;background:var(--rule);border-radius:0;">
+              <div style="position:absolute;height:100%;width:{{ actual_val }}%;background:{{ colors[idx] }};border-radius:0;max-width:100%;"></div>
+              <div style="position:absolute;top:-4px;height:16px;width:2px;background:var(--ink);left:{{ target_val }}%;"></div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <p class="caption">Vertical black lines indicate Blueprint target weights. Bars show current actual weights.</p>
+
+      <hr class="rule" style="margin:2.5rem 0;">
+
+      <!-- Drift Gauge -->
+      <p class="subhead mb-3">Portfolio Drift Monitor</p>
+      <div class="drift-gauge-wrapper">
+        <div style="height:220px;position:relative;">
+          <canvas id="driftGauge"></canvas>
+        </div>
+        <p class="caption mt-2">Threshold: 5.0% · Current drift: 3.2% · Status: <span style="color:var(--success);font-weight:600;">Within range</span></p>
+      </div>
+
+      <hr class="rule" style="margin:2.5rem 0;">
+
+      <!-- Operations Log -->
+      <p class="subhead mb-3">Operations Journal</p>
+      <div class="rebal-log">
+        <div class="rebal-item">
+          <div class="rebal-dot"></div>
+          <div>
+            <p class="rebal-date">Nov 10, 2024</p>
+            <p class="rebal-desc">Drift check: Stocks at +3.2% from target. Within 5% threshold — no action required.</p>
+          </div>
+        </div>
+        <div class="rebal-item">
+          <div class="rebal-dot"></div>
+          <div>
+            <p class="rebal-date">Sep 30, 2024</p>
+            <p class="rebal-desc">Q3 scheduled rebalance executed. Trimmed Stocks −3.1%, added Bonds +2.8%, Cash +0.3%.</p>
+          </div>
+        </div>
+        <div class="rebal-item">
+          <div class="rebal-dot"></div>
+          <div>
+            <p class="rebal-date">Aug 5, 2024</p>
+            <p class="rebal-desc">Drift trigger alert: Bonds drifted −5.3%. Emergency rebalance executed — bought bonds to restore target.</p>
+          </div>
+        </div>
+        <div class="rebal-item">
+          <div class="rebal-dot"></div>
+          <div>
+            <p class="rebal-date">Jun 30, 2024</p>
+            <p class="rebal-desc">Q2 scheduled rebalance. All assets within 1.5% of target. Minor trim of Stocks −0.8%.</p>
+          </div>
+        </div>
+        <div class="rebal-item">
+          <div class="rebal-dot"></div>
+          <div>
+            <p class="rebal-date">Apr 15, 2024</p>
+            <p class="rebal-desc">Strategy deployed to live portfolio. Initial allocation set per Blueprint v0.4.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Sidebar -->
+    <div>
+      <!-- Kill Switch -->
+      <div class="sidebar-card">
+        <div class="kill-switch-panel">
+          <div class="kill-switch-header">
+            <p class="kill-label">Kill Switch</p>
+            <label class="toggle-switch">
+              <input type="checkbox" id="kill-toggle">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <p class="caption" style="line-height:1.5;margin-bottom:1rem;">Automatically moves portfolio to 100% cash when maximum drawdown limit of <strong>−20%</strong> is breached.</p>
+          <p id="kill-status" style="font-size:0.6875rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--caption);">INACTIVE</p>
+        </div>
+      </div>
+
+      <!-- Alert Config -->
+      <div class="sidebar-card">
+        <p class="sidebar-title">Alert Configuration</p>
+        <div style="display:flex;flex-direction:column;gap:0.875rem;">
+          <label style="display:flex;align-items:center;justify-content:space-between;font-size:0.875rem;">
+            <span>Drift threshold breach</span>
+            <input type="checkbox" checked>
+          </label>
+          <label style="display:flex;align-items:center;justify-content:space-between;font-size:0.875rem;">
+            <span>Scheduled rebalance reminder</span>
+            <input type="checkbox" checked>
+          </label>
+          <label style="display:flex;align-items:center;justify-content:space-between;font-size:0.875rem;">
+            <span>Drawdown exceeds −10%</span>
+            <input type="checkbox" checked>
+          </label>
+          <label style="display:flex;align-items:center;justify-content:space-between;font-size:0.875rem;">
+            <span>Monthly performance report</span>
+            <input type="checkbox">
+          </label>
+        </div>
+      </div>
+
+      <!-- Portfolio KPIs -->
+      <div class="sidebar-card">
+        <p class="sidebar-title">Live KPIs (YTD 2024)</p>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;">
+            <span class="caption">Return (YTD)</span>
+            <span class="data-val" style="color:var(--success);">+12.4%</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--rule);padding-top:0.75rem;">
+            <span class="caption">Max Drawdown (YTD)</span>
+            <span class="data-val" style="color:var(--accent);">−7.3%</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--rule);padding-top:0.75rem;">
+            <span class="caption">Portfolio Drift</span>
+            <span class="data-val" style="color:var(--success);">3.2%</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--rule);padding-top:0.75rem;">
+            <span class="caption">Days Since Rebalance</span>
+            <span class="data-val">41</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--rule);padding-top:0.75rem;">
+            <span class="caption">Next Scheduled Rebalance</span>
+            <span style="font-size:0.8125rem;font-weight:500;">Dec 31, 2024</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cycle back prompt -->
+      <div style="padding:1.25rem;border:1px solid var(--rule);background:var(--paper);text-align:center;">
+        <p class="caption" style="font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;">↻ SIDC Cycle</p>
+        <p class="caption" style="line-height:1.5;margin-bottom:1rem;">Stage 5 completes one cycle. Return to Stage 1 to refine your Spec Sheet with real performance data.</p>
+        <a href="stage-1.html" class="btn btn-outline btn-sm">Begin Cycle 2 →</a>
+      </div>
+    </div>
+  </div>
+
+</div>

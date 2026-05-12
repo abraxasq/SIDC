@@ -1,0 +1,30 @@
+<div class="stage-progress">
+  {% assign stages = "Plan,Architecture,Implementation,Testing,Monitoring" | split: "," %}
+  {% assign stage_slugs = "stage-1.html,stage-2.html,stage-3.html,stage-4.html,stage-5.html" | split: "," %}
+  {% assign current = page.stage_num | default: 0 | plus: 0 %}
+
+  {% for stage in stages %}
+    {% assign i = forloop.index %}
+    {% assign slug = stage_slugs[forloop.index0] %}
+    {% if i < current %}
+      {% assign state = "completed" %}
+    {% elsif i == current %}
+      {% assign state = "active" %}
+    {% else %}
+      {% assign state = "locked" %}
+    {% endif %}
+
+    <a href="{{ slug | relative_url }}" class="stage-step {{ state }}" {% if state == "locked" %}style="pointer-events:none;"{% endif %}>
+      <div class="step-num">
+        {% if state == "completed" %}✓{% else %}{{ i }}{% endif %}
+      </div>
+      <div class="step-name">{{ stage }}</div>
+      <div class="step-status">
+        {% if state == "completed" %}Complete
+        {% elsif state == "active" %}In Progress
+        {% else %}Locked
+        {% endif %}
+      </div>
+    </a>
+  {% endfor %}
+</div>

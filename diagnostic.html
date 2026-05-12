@@ -1,0 +1,72 @@
+---
+layout: default
+title: "Investment Technical Debt Assessment"
+extra_js:
+  - /assets/js/diagnostic.js
+---
+
+<div class="page-header">
+  <div class="container">
+    <p class="subhead">Free Assessment</p>
+    <h1 class="display-md" style="margin-top:0.5rem;">Investment Technical Debt Assessment</h1>
+    <p class="body-text mt-2">Five questions. A precise diagnosis of the structural gaps in your investment architecture — and a clear path to resolve them.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="quiz-container">
+
+    <!-- Progress Bar -->
+    <div class="quiz-progress" id="quiz-progress">
+      <div class="quiz-progress-bar">
+        <div class="quiz-progress-fill" id="progress-fill" style="width:0%"></div>
+      </div>
+      <p class="quiz-progress-text" id="progress-text">0 of 5 complete</p>
+    </div>
+
+    <!-- Questions (rendered by diagnostic.js) -->
+    <div id="quiz-steps"></div>
+
+    <!-- Results (shown by diagnostic.js after completion) -->
+    <div class="score-result" id="score-result"></div>
+
+  </div>
+</div>
+
+<!-- Bottom explainer -->
+<hr class="rule">
+<section class="section-sm">
+  <div class="container">
+    <div class="grid-3">
+      <div>
+        <p class="subhead mb-2">How scores are calculated</p>
+        <p class="body-text">Your responses across five dimensions — target clarity, documentation, discipline, stress-testing, and risk tolerance — are weighted and normalized to a 0–100 scale. Higher scores indicate greater structural debt.</p>
+      </div>
+      <div>
+        <p class="subhead mb-2">Score interpretation</p>
+        <div style="display:flex;flex-direction:column;gap:0.625rem;margin-top:0.75rem;">
+          <div style="display:flex;align-items:center;gap:0.75rem;">
+            <span style="width:10px;height:10px;border-radius:50%;background:var(--success);flex-shrink:0;"></span>
+            <span class="caption"><strong>0–25:</strong> Well-Architected</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;">
+            <span style="width:10px;height:10px;border-radius:50%;background:var(--warning);flex-shrink:0;"></span>
+            <span class="caption"><strong>26–50:</strong> Moderate Debt</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;">
+            <span style="width:10px;height:10px;border-radius:50%;background:var(--accent);flex-shrink:0;"></span>
+            <span class="caption"><strong>51–75:</strong> High Technical Debt</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;">
+            <span style="width:10px;height:10px;border-radius:50%;background:#8B0000;flex-shrink:0;"></span>
+            <span class="caption"><strong>76–100:</strong> Critical Debt</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="subhead mb-2">Privacy</p>
+        <p class="body-text">Your assessment responses are processed locally in your browser and are not stored or transmitted to any server. This is a demonstration tool.</p>
+      </div>
+    </div>
+  </div>
+</section>
