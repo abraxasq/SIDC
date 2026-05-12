@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "My Page"
+title: "마이 페이지"
 extra_js:
   - /assets/js/charts.js
 ---
@@ -11,15 +11,15 @@ extra_js:
       <div class="user-avatar">JL</div>
       <div>
         <h1 class="user-name">J. Lorenzini</h1>
-        <p class="user-meta">Member since January 2024 · Strategy v0.4.0 · Stage 3 active</p>
+        <p class="user-meta">2024년 1월 가입 · 전략 v0.4.0 · 3단계 활성</p>
       </div>
     </div>
     <div style="display:flex;gap:1rem;align-items:center;">
       <div style="text-align:center;">
         <p class="data-val" style="font-size:2rem;font-weight:500;color:var(--warning);">41</p>
-        <p class="caption">Debt Score</p>
+        <p class="caption">부채 점수</p>
       </div>
-      <a href="diagnostic.html" class="btn btn-outline btn-sm">Reassess →</a>
+      <a href="diagnostic.html" class="btn btn-outline btn-sm">재진단 →</a>
     </div>
   </div>
 </div>
@@ -33,66 +33,66 @@ extra_js:
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2.5rem;">
         <div style="border:1px solid var(--rule);padding:1.25rem;text-align:center;">
           <p class="data-val" style="font-size:2rem;font-weight:500;color:var(--data-blue);">3 / 5</p>
-          <p class="caption mt-1">Stages Completed</p>
+          <p class="caption mt-1">완료된 단계</p>
         </div>
         <div style="border:1px solid var(--rule);padding:1.25rem;text-align:center;">
           <p class="data-val" style="font-size:2rem;font-weight:500;color:var(--success);">1 / 3</p>
-          <p class="caption mt-1">Documents Ready</p>
+          <p class="caption mt-1">준비된 문서</p>
         </div>
         <div style="border:1px solid var(--rule);padding:1.25rem;text-align:center;">
           <p class="data-val" style="font-size:2rem;font-weight:500;color:var(--warning);">41</p>
-          <p class="caption mt-1">Current Debt Score</p>
+          <p class="caption mt-1">현재 부채 점수</p>
         </div>
       </div>
 
       <!-- Technical Debt Progress Chart -->
-      <p class="subhead mb-3">Technical Debt Score — 2024</p>
+      <p class="subhead mb-3">기술부채 점수 — 2024년</p>
       <div class="chart-container" id="debtSparkline" style="min-height:180px;margin-bottom:0.5rem;"></div>
-      <p class="chart-caption">Score has decreased from 73 (January) to 41 (November) — a 44% reduction in structural debt through SIDC methodology application.</p>
+      <p class="chart-caption">점수가 1월 73점에서 11월 41점으로 감소했습니다 — SIDC 방법론 적용을 통해 구조적 부채가 44% 감소했습니다.</p>
 
       <hr class="rule" style="margin:2.5rem 0;">
 
       <!-- Version History -->
-      <p class="subhead mb-3">Strategy Version History</p>
+      <p class="subhead mb-3">전략 버전 이력</p>
       <table class="version-table">
         <thead>
           <tr>
-            <th>Version</th>
-            <th>Date</th>
-            <th>Change Summary</th>
-            <th>Stage</th>
+            <th>버전</th>
+            <th>날짜</th>
+            <th>변경 요약</th>
+            <th>단계</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td><span class="version-tag">v0.4.0</span></td>
-            <td class="caption">Nov 10, 2024</td>
-            <td>Rebalanced bonds +5%, reduced equity exposure to manage drift</td>
-            <td><span class="stage-badge" style="font-size:0.6875rem;padding:0.2rem 0.5rem;">Stage 3</span></td>
+            <td class="caption">2024년 11월 10일</td>
+            <td>채권 +5% 리밸런싱, 드리프트 관리를 위한 주식 비중 축소</td>
+            <td><span class="stage-badge" style="font-size:0.6875rem;padding:0.2rem 0.5rem;">3단계</span></td>
           </tr>
           <tr>
             <td><span class="version-tag">v0.3.2</span></td>
-            <td class="caption">Sep 15, 2024</td>
-            <td>Updated CAGR target from 7.0% to 8.5% after 2024 Q2 review</td>
-            <td><span class="stage-badge" style="font-size:0.6875rem;padding:0.2rem 0.5rem;background:var(--success);">Stage 1</span></td>
+            <td class="caption">2024년 9월 15일</td>
+            <td>2024년 2분기 검토 후 CAGR 목표를 7.0%에서 8.5%로 업데이트</td>
+            <td><span class="stage-badge" style="font-size:0.6875rem;padding:0.2rem 0.5rem;background:var(--success);">1단계</span></td>
           </tr>
           <tr>
             <td><span class="version-tag">v0.3.1</span></td>
-            <td class="caption">Jul 2, 2024</td>
-            <td>Added alternatives sleeve (5%) — REIT basket for inflation hedge</td>
-            <td><span class="stage-badge" style="font-size:0.6875rem;padding:0.2rem 0.5rem;background:var(--success);">Stage 2</span></td>
+            <td class="caption">2024년 7월 2일</td>
+            <td>대체자산 슬리브(5%) 추가 — 인플레이션 헤지를 위한 REIT 바스켓</td>
+            <td><span class="stage-badge" style="font-size:0.6875rem;padding:0.2rem 0.5rem;background:var(--success);">2단계</span></td>
           </tr>
           <tr>
             <td><span class="version-tag">v0.3.0</span></td>
-            <td class="caption">Apr 18, 2024</td>
-            <td>Completed Stage 4 QA — Sharpe ratio improved to 1.24, all 5 gates passed</td>
-            <td><span class="stage-badge" style="font-size:0.6875rem;padding:0.2rem 0.5rem;background:var(--data-gold);">Stage 4</span></td>
+            <td class="caption">2024년 4월 18일</td>
+            <td>4단계 QA 완료 — Sharpe 비율이 1.24로 개선되고 5가지 게이트 모두 통과</td>
+            <td><span class="stage-badge" style="font-size:0.6875rem;padding:0.2rem 0.5rem;background:var(--data-gold);">4단계</span></td>
           </tr>
           <tr>
             <td><span class="version-tag">v0.2.0</span></td>
-            <td class="caption">Jan 30, 2024</td>
-            <td>Architecture redesign after 2023 stress test revealed overconcentration in tech equities</td>
-            <td><span class="stage-badge" style="font-size:0.6875rem;padding:0.2rem 0.5rem;background:var(--success);">Stage 2</span></td>
+            <td class="caption">2024년 1월 30일</td>
+            <td>2023년 스트레스 테스트에서 기술주 집중 과도 노출이 드러난 후 아키텍처 재설계</td>
+            <td><span class="stage-badge" style="font-size:0.6875rem;padding:0.2rem 0.5rem;background:var(--success);">2단계</span></td>
           </tr>
         </tbody>
       </table>
@@ -104,37 +104,37 @@ extra_js:
 
       <!-- Document Archive -->
       <div class="sidebar-card">
-        <p class="sidebar-title">Document Archive</p>
+        <p class="sidebar-title">문서 보관함</p>
         <div class="doc-list">
           <div class="doc-item">
             <div>
-              <p class="doc-name">Spec Sheet</p>
-              <p class="doc-meta">v1.2 · Nov 10, 2024 · PDF</p>
+              <p class="doc-name">명세서</p>
+              <p class="doc-meta">v1.2 · 2024년 11월 10일 · PDF</p>
             </div>
             <button class="btn btn-outline btn-sm">↓</button>
           </div>
           <div class="doc-item">
             <div>
-              <p class="doc-name">Portfolio Blueprint</p>
-              <p class="doc-meta">v0.4 · Draft · PDF</p>
+              <p class="doc-name">포트폴리오 설계도</p>
+              <p class="doc-meta">v0.4 · 초안 · PDF</p>
             </div>
-            <span class="doc-status progress">Draft</span>
+            <span class="doc-status progress">초안</span>
           </div>
           <div class="doc-item" style="opacity:0.5;">
             <div>
-              <p class="doc-name">QA Report</p>
-              <p class="doc-meta">Complete Stage 4 first</p>
+              <p class="doc-name">QA 보고서</p>
+              <p class="doc-meta">먼저 4단계를 완료하세요</p>
             </div>
-            <span class="doc-status locked">Locked</span>
+            <span class="doc-status locked">잠김</span>
           </div>
         </div>
       </div>
 
       <!-- Stage Progress Quick View -->
       <div class="sidebar-card">
-        <p class="sidebar-title">SIDC Progress</p>
+        <p class="sidebar-title">SIDC 진행도</p>
         <div style="display:flex;flex-direction:column;gap:0.875rem;">
-          {% assign stages_mp = "Plan,Architecture,Implementation,Testing,Monitoring" | split: "," %}
+          {% assign stages_mp = "계획,아키텍처,구현,테스트,모니터링" | split: "," %}
           {% assign status_mp = "completed,completed,active,locked,locked" | split: "," %}
           {% for stage in stages_mp %}
             {% assign idx = forloop.index0 %}
@@ -145,36 +145,36 @@ extra_js:
               </div>
               <div>
                 <p style="font-size:0.875rem;font-weight:{% if st == 'active' %}600{% else %}400{% endif %};color:{% if st == 'locked' %}var(--caption){% else %}var(--ink){% endif %};">{{ stage }}</p>
-                <p class="caption" style="font-size:0.6875rem;">{% if st == 'completed' %}Complete{% elsif st == 'active' %}In Progress{% else %}Locked{% endif %}</p>
+                <p class="caption" style="font-size:0.6875rem;">{% if st == 'completed' %}완료{% elsif st == 'active' %}진행 중{% else %}잠김{% endif %}</p>
               </div>
             </div>
           {% endfor %}
         </div>
-        <a href="workspace.html" class="btn btn-primary w-full mt-4" style="justify-content:center;">Open Workspace →</a>
+        <a href="workspace.html" class="btn btn-primary w-full mt-4" style="justify-content:center;">워크스페이스 열기 →</a>
       </div>
 
       <!-- Debt Score History -->
       <div class="sidebar-card">
-        <p class="sidebar-title">Debt Score History</p>
+        <p class="sidebar-title">부채 점수 이력</p>
         <div style="display:flex;flex-direction:column;gap:0.5rem;">
           <div style="display:flex;justify-content:space-between;align-items:baseline;">
-            <span class="caption">Jan 2024 (Start)</span>
+            <span class="caption">2024년 1월 (시작)</span>
             <span class="data-val" style="color:var(--accent);font-size:0.875rem;">73</span>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:baseline;">
-            <span class="caption">Apr 2024 (Post-Stage 2)</span>
+            <span class="caption">2024년 4월 (2단계 완료 후)</span>
             <span class="data-val" style="color:var(--warning);font-size:0.875rem;">55</span>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:baseline;">
-            <span class="caption">Jul 2024 (Post-Stage 4)</span>
+            <span class="caption">2024년 7월 (4단계 완료 후)</span>
             <span class="data-val" style="color:var(--warning);font-size:0.875rem;">48</span>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--rule);padding-top:0.5rem;">
-            <span class="caption"><strong>Nov 2024 (Current)</strong></span>
+            <span class="caption"><strong>2024년 11월 (현재)</strong></span>
             <span class="data-val" style="color:var(--warning);font-size:0.875rem;font-weight:600;">41</span>
           </div>
         </div>
-        <p class="caption mt-2" style="color:var(--success);">↓ 44% reduction since start</p>
+        <p class="caption mt-2" style="color:var(--success);">↓ 시작 이후 44% 감소</p>
       </div>
 
     </div>

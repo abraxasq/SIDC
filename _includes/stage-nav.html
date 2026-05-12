@@ -1,5 +1,5 @@
 <div class="stage-progress">
-  {% assign stages = "Plan,Architecture,Implementation,Testing,Monitoring" | split: "," %}
+  {% assign stages = "계획,아키텍처,구현,테스트,모니터링" | split: "," %}
   {% assign stage_slugs = "stage-1.html,stage-2.html,stage-3.html,stage-4.html,stage-5.html" | split: "," %}
   {% assign current = page.stage_num | default: 0 | plus: 0 %}
 
@@ -20,9 +20,9 @@
       </div>
       <div class="step-name">{{ stage }}</div>
       <div class="step-status">
-        {% if state == "completed" %}Complete
-        {% elsif state == "active" %}In Progress
-        {% else %}Locked
+        {% if state == "completed" %}완료
+        {% elsif state == "active" %}진행 중
+        {% else %}잠김
         {% endif %}
       </div>
     </a>

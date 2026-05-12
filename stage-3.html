@@ -1,7 +1,7 @@
 ---
 layout: workspace
-title: "Stage 3: Implementation & Build"
-stage_title: "Implementation & Build"
+title: "3단계: 구현 및 빌드"
+stage_title: "구현 및 빌드"
 stage_num: 3
 ---
 
@@ -10,61 +10,61 @@ stage_num: 3
   <div class="stage-ws-grid">
     <!-- Main -->
     <div>
-      <p class="subhead mb-3">Strategy Module Library</p>
-      <p class="body-text mb-3" style="font-size:0.875rem;">Select the strategy modules that will drive portfolio construction. Each module applies a systematic rule to security selection within your Blueprint's asset allocation.</p>
+      <p class="subhead mb-3">전략 모듈 라이브러리</p>
+      <p class="body-text mb-3" style="font-size:0.875rem;">포트폴리오 구성을 주도할 전략 모듈을 선택하세요. 각 모듈은 설계도의 자산 배분 내에서 증권 선택에 체계적인 규칙을 적용합니다.</p>
 
       <div class="module-grid">
         <div class="module-card active">
           <div class="module-icon">📈</div>
-          <p class="module-name">Momentum</p>
-          <p class="module-desc">12-month trailing momentum with 1-month skip. Rank securities by performance, hold top quartile.</p>
+          <p class="module-name">모멘텀</p>
+          <p class="module-desc">12개월 후행 모멘텀, 1개월 스킵. 성과 기준 증권 순위를 매기고 상위 4분위를 보유합니다.</p>
         </div>
         <div class="module-card active">
           <div class="module-icon">💎</div>
-          <p class="module-name">Value</p>
-          <p class="module-desc">Price-to-book and earnings yield composite. Targets undervalued securities with fundamental support.</p>
+          <p class="module-name">가치</p>
+          <p class="module-desc">장부가 대비 가격 및 수익 수익률 복합 지표. 기본적 지지를 갖춘 저평가된 증권을 목표로 합니다.</p>
         </div>
         <div class="module-card">
           <div class="module-icon">🛡</div>
-          <p class="module-name">Low Volatility</p>
-          <p class="module-desc">Minimum variance construction within asset class. Reduces drawdown at the cost of some upside capture.</p>
+          <p class="module-name">저변동성</p>
+          <p class="module-desc">자산군 내 최소 분산 구성. 일부 상승 잠재력을 희생하면서 낙폭을 줄입니다.</p>
         </div>
         <div class="module-card">
           <div class="module-icon">📊</div>
-          <p class="module-name">Quality</p>
-          <p class="module-desc">Return on equity, debt-to-equity, and earnings stability composite. Tilts toward durable businesses.</p>
+          <p class="module-name">품질</p>
+          <p class="module-desc">자기자본이익률, 부채비율, 수익 안정성 복합 지표. 지속 가능한 기업으로의 기울기를 제공합니다.</p>
         </div>
         <div class="module-card">
           <div class="module-icon">⚖️</div>
-          <p class="module-name">Equal Weight</p>
-          <p class="module-desc">Naive diversification baseline. Equal-weight within each asset class module. Low complexity, low cost.</p>
+          <p class="module-name">균등 비중</p>
+          <p class="module-desc">기본 순진 분산화. 각 자산군 모듈 내 균등 비중. 낮은 복잡도, 낮은 비용.</p>
         </div>
         <div class="module-card">
           <div class="module-icon">🌐</div>
-          <p class="module-name">Global Macro</p>
-          <p class="module-desc">Top-down regime detection. Shifts allocation between growth and defensive assets based on macro signals.</p>
+          <p class="module-name">글로벌 매크로</p>
+          <p class="module-desc">하향식 레짐 감지. 매크로 신호를 기반으로 성장과 방어 자산 간 배분을 전환합니다.</p>
         </div>
       </div>
 
-      <p style="font-size:0.8125rem;color:var(--caption);margin-top:0.5rem;">Click a module to toggle. <strong style="color:var(--data-blue);">2 selected.</strong></p>
+      <p style="font-size:0.8125rem;color:var(--caption);margin-top:0.5rem;">모듈을 클릭하여 선택/해제하세요. <strong style="color:var(--data-blue);">현재 2개 선택됨.</strong></p>
 
       <hr class="rule" style="margin:2.5rem 0;">
 
       <!-- Rebalancing Rules -->
-      <p class="subhead mb-3">Rebalancing Rules</p>
+      <p class="subhead mb-3">리밸런싱 규칙</p>
 
       <div class="grid-2" style="gap:1.5rem;margin-bottom:1.5rem;">
         <div class="form-group">
-          <label class="form-label">Rebalancing Frequency</label>
+          <label class="form-label">리밸런싱 주기</label>
           <select class="form-input">
-            <option>Monthly</option>
-            <option selected>Quarterly</option>
-            <option>Semi-Annual</option>
-            <option>Annual</option>
+            <option>월간</option>
+            <option selected>분기별</option>
+            <option>반기별</option>
+            <option>연간</option>
           </select>
         </div>
         <div class="form-group">
-          <label class="form-label">Drift Trigger Threshold</label>
+          <label class="form-label">드리프트 트리거 임계값</label>
           <div style="display:flex;align-items:center;gap:1rem;">
             <input type="range" class="form-range" min="1" max="20" value="5">
             <span class="data-val" style="font-size:1.125rem;font-weight:500;width:44px;">5%</span>
@@ -73,49 +73,49 @@ stage_num: 3
       </div>
 
       <div style="padding:1rem 1.25rem;background:var(--paper);border:1px solid var(--rule);">
-        <p class="caption" style="font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;">Active Rule</p>
-        <p style="font-size:0.875rem;color:var(--ink-light);">Rebalance quarterly <em>or</em> when any asset class deviates more than <strong>5%</strong> from Blueprint target weights, whichever occurs first.</p>
+        <p class="caption" style="font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;">활성 규칙</p>
+        <p style="font-size:0.875rem;color:var(--ink-light);">분기별 <em>또는</em> 자산군이 설계도 목표 비중에서 <strong>5%</strong> 이상 벗어날 때 중 먼저 발생하는 시점에 리밸런싱합니다.</p>
       </div>
     </div>
 
     <!-- Sidebar: Unit Test Checklist -->
     <div>
       <div class="sidebar-card">
-        <p class="sidebar-title">Unit Test Checklist</p>
+        <p class="sidebar-title">단위 테스트 체크리스트</p>
         <ul class="checklist">
           <li>
             <div class="check-icon checked">✓</div>
-            CAGR target is achievable given MDD tolerance (Calmar ≥ 0.43)
+            MDD 허용치를 감안한 CAGR 목표 달성 가능 (Calmar ≥ 0.43)
           </li>
           <li>
             <div class="check-icon checked">✓</div>
-            Asset allocation sums to exactly 100%
+            자산 배분 합계가 정확히 100%
           </li>
           <li>
             <div class="check-icon checked">✓</div>
-            No single asset class exceeds 60% of portfolio
+            단일 자산군이 포트폴리오의 60%를 초과하지 않음
           </li>
           <li>
             <div class="check-icon checked">✓</div>
-            Correlation between stocks and bonds is below 0.0
+            주식과 채권의 상관관계가 0.0 미만
           </li>
           <li>
             <div class="check-icon checked">✓</div>
-            Rebalancing rule is defined (frequency + drift trigger)
+            리밸런싱 규칙 정의 (주기 + 드리프트 트리거)
           </li>
           <li>
             <div class="check-icon" style="border-color:var(--warning);">—</div>
-            <span>At least one defensive module selected (Low-Vol or Global Macro)</span>
+            <span>방어적 모듈 최소 1개 선택 (저변동성 또는 글로벌 매크로)</span>
           </li>
           <li>
             <div class="check-icon" style="border-color:var(--warning);">—</div>
-            <span>Cash allocation ≥ 10% (liquidity buffer)</span>
+            <span>현금 배분 ≥ 10% (유동성 완충)</span>
           </li>
         </ul>
 
         <div style="margin-top:1.25rem;padding:0.875rem;background:var(--paper);">
           <div style="display:flex;justify-content:space-between;align-items:center;">
-            <span class="caption" style="font-weight:600;">Tests Passed</span>
+            <span class="caption" style="font-weight:600;">테스트 통과</span>
             <span class="data-val" style="font-size:1.125rem;color:var(--warning);">5 / 7</span>
           </div>
           <div style="height:4px;background:var(--rule);margin-top:0.5rem;border-radius:2px;overflow:hidden;">
@@ -125,37 +125,37 @@ stage_num: 3
 
         <div style="margin-top:1rem;" class="overfit-banner">
           <span class="overfit-icon">⚠</span>
-          <p class="overfit-text"><strong>2 tests pending.</strong> Add a defensive module (Low-Vol or Global Macro) to resolve failing tests before proceeding to Stage 4.</p>
+          <p class="overfit-text"><strong>2개의 테스트 보류 중.</strong> 4단계로 진행하기 전에 방어적 모듈(저변동성 또는 글로벌 매크로)을 추가하여 실패한 테스트를 해결하세요.</p>
         </div>
 
         <button class="btn btn-primary w-full mt-3" style="justify-content:center;width:100%;">
-          Save Implementation
+          구현 저장
         </button>
       </div>
 
       <!-- Rebalancing history preview -->
       <div class="sidebar-card">
-        <p class="sidebar-title">Rebalancing History</p>
+        <p class="sidebar-title">리밸런싱 이력</p>
         <div class="rebal-log">
           <div class="rebal-item">
             <div class="rebal-dot"></div>
             <div>
-              <p class="rebal-date">Sep 30, 2024</p>
-              <p class="rebal-desc">Q3 rebalance — Stocks drifted +4.8%, trimmed to 50%</p>
+              <p class="rebal-date">2024년 9월 30일</p>
+              <p class="rebal-desc">3분기 리밸런싱 — 주식 +4.8% 드리프트, 50%로 조정</p>
             </div>
           </div>
           <div class="rebal-item">
             <div class="rebal-dot"></div>
             <div>
-              <p class="rebal-date">Jun 30, 2024</p>
-              <p class="rebal-desc">Q2 rebalance — Routine, drift within 2% across all assets</p>
+              <p class="rebal-date">2024년 6월 30일</p>
+              <p class="rebal-desc">2분기 리밸런싱 — 정기적, 모든 자산의 드리프트 2% 이내</p>
             </div>
           </div>
           <div class="rebal-item">
             <div class="rebal-dot"></div>
             <div>
-              <p class="rebal-date">Apr 15, 2024</p>
-              <p class="rebal-desc">Drift trigger — Bonds drifted −5.2%, bought back to 30%</p>
+              <p class="rebal-date">2024년 4월 15일</p>
+              <p class="rebal-desc">드리프트 트리거 — 채권 −5.2% 드리프트, 30%로 재매수</p>
             </div>
           </div>
         </div>
