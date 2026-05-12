@@ -1,7 +1,7 @@
 ---
 layout: workspace
-title: "Stage 4: Testing & QA"
-stage_title: "Testing & Quality Assurance"
+title: "4단계: 테스트 및 QA"
+stage_title: "테스트 및 품질 보증"
 stage_num: 4
 ---
 
@@ -15,11 +15,11 @@ stage_num: 4
     </div>
     <div class="metric-cell">
       <span class="metric-val negative">−18.2%</span>
-      <span class="metric-lbl">Max Drawdown</span>
+      <span class="metric-lbl">최대 낙폭</span>
     </div>
     <div class="metric-cell">
       <span class="metric-val positive">1.24</span>
-      <span class="metric-lbl">Sharpe Ratio</span>
+      <span class="metric-lbl">Sharpe 비율</span>
     </div>
     <div class="metric-cell">
       <span class="metric-val positive">1.71</span>
@@ -31,14 +31,14 @@ stage_num: 4
     </div>
     <div class="metric-cell">
       <span class="metric-val positive">63.2%</span>
-      <span class="metric-lbl">Win Rate</span>
+      <span class="metric-lbl">승률</span>
     </div>
   </div>
 
   <!-- Overfit warning -->
   <div class="overfit-banner">
     <span class="overfit-icon">✅</span>
-    <p class="overfit-text"><strong>No overfit detected.</strong> Out-of-sample performance (2019–2024) tracks in-sample (2014–2018) within 1.2 points of CAGR. Strategy appears robust.</p>
+    <p class="overfit-text"><strong>과적합 없음.</strong> 표본 외 성과(2019–2024)가 표본 내(2014–2018)와 CAGR 1.2포인트 이내로 추적됩니다. 전략이 견고한 것으로 보입니다.</p>
   </div>
 
   <div class="stage-ws-grid" style="margin-top:2rem;">
@@ -46,77 +46,77 @@ stage_num: 4
     <div>
       <!-- Backtest Chart -->
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
-        <p class="subhead">10-Year Cumulative Performance</p>
+        <p class="subhead">10년 누적 성과</p>
         <div class="chart-label-group" style="margin-bottom:0;">
           <div class="chart-label">
             <div class="chart-label-dot" style="background:var(--data-blue);"></div>
-            <span>Lorenzini Strategy</span>
+            <span>Lorenzini 전략</span>
           </div>
           <div class="chart-label">
             <div class="chart-label-dot" style="background:var(--caption);border-top:1px dashed var(--caption);height:1px;"></div>
-            <span>S&P 500 Benchmark</span>
+            <span>S&P 500 벤치마크</span>
           </div>
         </div>
       </div>
 
       <div class="chart-container" id="performanceChart" style="min-height:340px;"></div>
-      <p class="chart-caption">Cumulative returns (%) from January 2014 to December 2024. Strategy: +107.6% · Benchmark: +82.1%. Crisis events annotated in red.</p>
+      <p class="chart-caption">2014년 1월부터 2024년 12월까지의 누적 수익률 (%). 전략: +107.6% · 벤치마크: +82.1%. 위기 이벤트는 빨간색으로 표시됩니다.</p>
 
       <hr class="rule" style="margin:2.5rem 0;">
 
       <!-- Stress Test Table -->
-      <p class="subhead mb-3">Stress Test Results</p>
+      <p class="subhead mb-3">스트레스 테스트 결과</p>
       <table class="stress-table">
         <thead>
           <tr>
-            <th>Scenario</th>
-            <th>Period</th>
-            <th>Strategy</th>
-            <th>Benchmark</th>
-            <th>Recovery</th>
-            <th>Status</th>
+            <th>시나리오</th>
+            <th>기간</th>
+            <th>전략</th>
+            <th>벤치마크</th>
+            <th>회복</th>
+            <th>상태</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>2008 Global Financial Crisis</strong></td>
-            <td class="caption">Sep '08 – Mar '09</td>
+            <td><strong>2008년 글로벌 금융위기</strong></td>
+            <td class="caption">'08년 9월 – '09년 3월</td>
             <td class="stress-val strategy">−18.2%</td>
             <td class="stress-val benchmark">−38.5%</td>
-            <td class="caption">14 months</td>
-            <td><span class="stress-badge protected">✓ Protected</span></td>
+            <td class="caption">14개월</td>
+            <td><span class="stress-badge protected">✓ 방어됨</span></td>
           </tr>
           <tr>
-            <td><strong>2020 COVID-19 Crash</strong></td>
-            <td class="caption">Feb – Mar 2020</td>
+            <td><strong>2020년 COVID-19 폭락</strong></td>
+            <td class="caption">2020년 2월 – 3월</td>
             <td class="stress-val strategy">−12.4%</td>
             <td class="stress-val benchmark">−33.9%</td>
-            <td class="caption">5 months</td>
-            <td><span class="stress-badge protected">✓ Protected</span></td>
+            <td class="caption">5개월</td>
+            <td><span class="stress-badge protected">✓ 방어됨</span></td>
           </tr>
           <tr>
-            <td><strong>2022 Fed Rate Hike Cycle</strong></td>
-            <td class="caption">Jan – Dec 2022</td>
+            <td><strong>2022년 연준 금리인상 사이클</strong></td>
+            <td class="caption">2022년 1월 – 12월</td>
             <td class="stress-val strategy">−7.8%</td>
             <td class="stress-val benchmark">−19.4%</td>
-            <td class="caption">11 months</td>
-            <td><span class="stress-badge protected">✓ Protected</span></td>
+            <td class="caption">11개월</td>
+            <td><span class="stress-badge protected">✓ 방어됨</span></td>
           </tr>
           <tr>
-            <td><strong>2000 Dot-Com Bubble Burst</strong></td>
-            <td class="caption">Mar '00 – Oct '02</td>
+            <td><strong>2000년 닷컴버블 붕괴</strong></td>
+            <td class="caption">'00년 3월 – '02년 10월</td>
             <td class="stress-val strategy">−8.1%</td>
             <td class="stress-val benchmark">−49.1%</td>
-            <td class="caption">18 months</td>
-            <td><span class="stress-badge protected">✓ Protected</span></td>
+            <td class="caption">18개월</td>
+            <td><span class="stress-badge protected">✓ 방어됨</span></td>
           </tr>
           <tr>
-            <td><strong>Custom −20% Scenario</strong></td>
-            <td class="caption">Hypothetical</td>
+            <td><strong>커스텀 −20% 시나리오</strong></td>
+            <td class="caption">가상</td>
             <td class="stress-val strategy">−14.3%</td>
             <td class="stress-val benchmark">—</td>
-            <td class="caption">~16 months</td>
-            <td><span class="stress-badge modeled">Modeled</span></td>
+            <td class="caption">약 16개월</td>
+            <td><span class="stress-badge modeled">모델링됨</span></td>
           </tr>
         </tbody>
       </table>
@@ -125,87 +125,87 @@ stage_num: 4
     <!-- Sidebar: QA Report -->
     <div>
       <div class="sidebar-card">
-        <p class="sidebar-title">QA Report Summary</p>
+        <p class="sidebar-title">QA 보고서 요약</p>
 
         <div style="display:flex;flex-direction:column;gap:1rem;">
           <div>
-            <p class="caption">QA Gate 1: Return</p>
+            <p class="caption">QA 게이트 1: 수익</p>
             <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.375rem;">
-              <span class="caption">CAGR ≥ 8.0% target</span>
+              <span class="caption">CAGR ≥ 8.0% 목표</span>
               <span style="color:var(--success);font-weight:600;font-size:0.8125rem;">8.4% ✓</span>
             </div>
           </div>
           <div style="border-top:1px solid var(--rule);padding-top:1rem;">
-            <p class="caption">QA Gate 2: Risk</p>
+            <p class="caption">QA 게이트 2: 위험</p>
             <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.375rem;">
-              <span class="caption">MDD ≥ −20% limit</span>
+              <span class="caption">MDD ≥ −20% 한도</span>
               <span style="color:var(--success);font-weight:600;font-size:0.8125rem;">−18.2% ✓</span>
             </div>
           </div>
           <div style="border-top:1px solid var(--rule);padding-top:1rem;">
-            <p class="caption">QA Gate 3: Efficiency</p>
+            <p class="caption">QA 게이트 3: 효율성</p>
             <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.375rem;">
               <span class="caption">Sharpe ≥ 1.0</span>
               <span style="color:var(--success);font-weight:600;font-size:0.8125rem;">1.24 ✓</span>
             </div>
           </div>
           <div style="border-top:1px solid var(--rule);padding-top:1rem;">
-            <p class="caption">QA Gate 4: Robustness</p>
+            <p class="caption">QA 게이트 4: 견고성</p>
             <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.375rem;">
               <span class="caption">Calmar ≥ 0.43</span>
               <span style="color:var(--success);font-weight:600;font-size:0.8125rem;">0.46 ✓</span>
             </div>
           </div>
           <div style="border-top:1px solid var(--rule);padding-top:1rem;">
-            <p class="caption">QA Gate 5: Stress</p>
+            <p class="caption">QA 게이트 5: 스트레스</p>
             <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.375rem;">
-              <span class="caption">All 4 crisis scenarios</span>
+              <span class="caption">4가지 위기 시나리오 모두</span>
               <span style="color:var(--success);font-weight:600;font-size:0.8125rem;">4/4 ✓</span>
             </div>
           </div>
         </div>
 
         <div style="margin-top:1.5rem;padding:1rem;background:#EAF3EE;border:1px solid var(--success);">
-          <p style="font-size:0.8125rem;color:var(--success);font-weight:700;">5/5 QA Gates Passed</p>
-          <p style="font-size:0.75rem;color:var(--ink-light);margin-top:0.375rem;">Your strategy is cleared for deployment in Stage 5.</p>
+          <p style="font-size:0.8125rem;color:var(--success);font-weight:700;">5/5 QA 게이트 통과</p>
+          <p style="font-size:0.75rem;color:var(--ink-light);margin-top:0.375rem;">전략이 5단계 배포를 위해 승인되었습니다.</p>
         </div>
 
         <div style="display:flex;gap:0.75rem;margin-top:1.25rem;">
-          <button class="btn btn-outline btn-sm">↓ QA Report PDF</button>
+          <button class="btn btn-outline btn-sm">↓ QA 보고서 PDF</button>
         </div>
       </div>
 
       <!-- Overfit Score -->
       <div class="sidebar-card">
-        <p class="sidebar-title">Overfit Warning System</p>
+        <p class="sidebar-title">과적합 경고 시스템</p>
         <div style="display:flex;flex-direction:column;gap:0.875rem;">
           <div>
             <div style="display:flex;justify-content:space-between;margin-bottom:0.375rem;">
-              <span class="caption">Parameter count</span>
-              <span class="data-val" style="font-size:0.875rem;color:var(--success);">Low</span>
+              <span class="caption">파라미터 수</span>
+              <span class="data-val" style="font-size:0.875rem;color:var(--success);">낮음</span>
             </div>
             <div style="height:4px;background:var(--rule);border-radius:2px;"><div style="height:100%;width:25%;background:var(--success);border-radius:2px;"></div></div>
           </div>
           <div>
             <div style="display:flex;justify-content:space-between;margin-bottom:0.375rem;">
-              <span class="caption">In/Out sample gap</span>
+              <span class="caption">표본 내/외 차이</span>
               <span class="data-val" style="font-size:0.875rem;color:var(--success);">1.2%</span>
             </div>
             <div style="height:4px;background:var(--rule);border-radius:2px;"><div style="height:100%;width:20%;background:var(--success);border-radius:2px;"></div></div>
           </div>
           <div>
             <div style="display:flex;justify-content:space-between;margin-bottom:0.375rem;">
-              <span class="caption">Overfit risk score</span>
+              <span class="caption">과적합 위험 점수</span>
               <span class="data-val" style="font-size:0.875rem;color:var(--success);">12 / 100</span>
             </div>
             <div style="height:4px;background:var(--rule);border-radius:2px;"><div style="height:100%;width:12%;background:var(--success);border-radius:2px;"></div></div>
           </div>
         </div>
-        <p class="caption mt-3">Scores above 50 indicate potential curve-fitting. Your strategy shows strong generalization.</p>
+        <p class="caption mt-3">50점 이상은 잠재적 곡선 과적합을 나타냅니다. 전략이 강력한 일반화를 보입니다.</p>
       </div>
 
       <a href="stage-5.html" class="btn btn-primary" style="width:100%;justify-content:center;">
-        Advance to Monitoring →
+        모니터링으로 진행 →
       </a>
     </div>
   </div>

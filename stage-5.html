@@ -1,7 +1,7 @@
 ---
 layout: workspace
-title: "Stage 5: Deployment & Monitoring"
-stage_title: "Deployment & Monitoring"
+title: "5단계: 배포 및 모니터링"
+stage_title: "배포 및 모니터링"
 stage_num: 5
 ---
 
@@ -10,8 +10,8 @@ stage_num: 5
   <!-- Live Status Banner -->
   <div style="display:flex;align-items:center;gap:0.75rem;padding:0.875rem 1.25rem;background:#EAF3EE;border:1px solid var(--success);margin-bottom:2rem;">
     <span style="width:8px;height:8px;border-radius:50%;background:var(--success);display:inline-block;"></span>
-    <span style="font-size:0.8125rem;font-weight:600;color:var(--success);">Portfolio LIVE</span>
-    <span style="font-size:0.8125rem;color:var(--caption);">· Last updated: Nov 10, 2024 at 16:30 EST · All systems nominal</span>
+    <span style="font-size:0.8125rem;font-weight:600;color:var(--success);">포트폴리오 라이브</span>
+    <span style="font-size:0.8125rem;color:var(--caption);">· 마지막 업데이트: 2024년 11월 10일 16:30 EST · 모든 시스템 정상</span>
   </div>
 
   <div class="stage-ws-grid">
@@ -19,9 +19,9 @@ stage_num: 5
     <div>
 
       <!-- Current vs. Target Allocation -->
-      <p class="subhead mb-3">Current vs. Target Allocation</p>
+      <p class="subhead mb-3">현재 대 목표 배분</p>
       <div style="display:flex;flex-direction:column;gap:1.25rem;margin-bottom:2rem;">
-        {% assign assets = "Stocks,Bonds,Cash,Alternatives" | split: "," %}
+        {% assign assets = "주식,채권,현금,대체자산" | split: "," %}
         {% assign targets = "50,30,15,5" | split: "," %}
         {% assign actuals = "53.2,27.8,14.1,4.9" | split: "," %}
         {% assign colors  = "#2E5FA3,#1A1A1A,#B3B3B3,#C01933" | split: "," %}
@@ -35,8 +35,8 @@ stage_num: 5
             <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
               <span style="font-size:0.875rem;font-weight:500;">{{ asset }}</span>
               <div style="display:flex;gap:1.5rem;font-size:0.8125rem;">
-                <span class="caption">Target: <strong style="color:var(--ink);">{{ target_val }}%</strong></span>
-                <span class="caption">Current: <strong style="color:{{ colors[idx] }};">{{ actual_val }}%</strong></span>
+                <span class="caption">목표: <strong style="color:var(--ink);">{{ target_val }}%</strong></span>
+                <span class="caption">현재: <strong style="color:{{ colors[idx] }};">{{ actual_val }}%</strong></span>
                 <span class="caption" style="color:{% if diff > 2 or diff < -2 %}var(--warning){% else %}var(--success){% endif %};">
                   {% if diff > 0 %}+{% endif %}{{ diff }}%
                 </span>
@@ -49,55 +49,55 @@ stage_num: 5
           </div>
         {% endfor %}
       </div>
-      <p class="caption">Vertical black lines indicate Blueprint target weights. Bars show current actual weights.</p>
+      <p class="caption">세로 검정 선은 설계도 목표 비중을 나타냅니다. 막대는 현재 실제 비중을 나타냅니다.</p>
 
       <hr class="rule" style="margin:2.5rem 0;">
 
       <!-- Drift Gauge -->
-      <p class="subhead mb-3">Portfolio Drift Monitor</p>
+      <p class="subhead mb-3">포트폴리오 드리프트 모니터</p>
       <div class="drift-gauge-wrapper">
         <div id="driftGauge" style="min-height:220px;position:relative;"></div>
-        <p class="caption mt-2">Threshold: 5.0% · Current drift: 3.2% · Status: <span style="color:var(--success);font-weight:600;">Within range</span></p>
+        <p class="caption mt-2">임계값: 5.0% · 현재 드리프트: 3.2% · 상태: <span style="color:var(--success);font-weight:600;">범위 내</span></p>
       </div>
 
       <hr class="rule" style="margin:2.5rem 0;">
 
       <!-- Operations Log -->
-      <p class="subhead mb-3">Operations Journal</p>
+      <p class="subhead mb-3">운영 일지</p>
       <div class="rebal-log">
         <div class="rebal-item">
           <div class="rebal-dot"></div>
           <div>
-            <p class="rebal-date">Nov 10, 2024</p>
-            <p class="rebal-desc">Drift check: Stocks at +3.2% from target. Within 5% threshold — no action required.</p>
+            <p class="rebal-date">2024년 11월 10일</p>
+            <p class="rebal-desc">드리프트 확인: 주식이 목표에서 +3.2%. 5% 임계값 이내 — 조치 불필요.</p>
           </div>
         </div>
         <div class="rebal-item">
           <div class="rebal-dot"></div>
           <div>
-            <p class="rebal-date">Sep 30, 2024</p>
-            <p class="rebal-desc">Q3 scheduled rebalance executed. Trimmed Stocks −3.1%, added Bonds +2.8%, Cash +0.3%.</p>
+            <p class="rebal-date">2024년 9월 30일</p>
+            <p class="rebal-desc">3분기 예정 리밸런싱 실행. 주식 −3.1% 조정, 채권 +2.8% 추가, 현금 +0.3% 추가.</p>
           </div>
         </div>
         <div class="rebal-item">
           <div class="rebal-dot"></div>
           <div>
-            <p class="rebal-date">Aug 5, 2024</p>
-            <p class="rebal-desc">Drift trigger alert: Bonds drifted −5.3%. Emergency rebalance executed — bought bonds to restore target.</p>
+            <p class="rebal-date">2024년 8월 5일</p>
+            <p class="rebal-desc">드리프트 트리거 경고: 채권 −5.3% 드리프트. 긴급 리밸런싱 실행 — 목표 비중 회복을 위해 채권 매수.</p>
           </div>
         </div>
         <div class="rebal-item">
           <div class="rebal-dot"></div>
           <div>
-            <p class="rebal-date">Jun 30, 2024</p>
-            <p class="rebal-desc">Q2 scheduled rebalance. All assets within 1.5% of target. Minor trim of Stocks −0.8%.</p>
+            <p class="rebal-date">2024년 6월 30일</p>
+            <p class="rebal-desc">2분기 예정 리밸런싱. 모든 자산이 목표 대비 1.5% 이내. 주식 소폭 조정 −0.8%.</p>
           </div>
         </div>
         <div class="rebal-item">
           <div class="rebal-dot"></div>
           <div>
-            <p class="rebal-date">Apr 15, 2024</p>
-            <p class="rebal-desc">Strategy deployed to live portfolio. Initial allocation set per Blueprint v0.4.</p>
+            <p class="rebal-date">2024년 4월 15일</p>
+            <p class="rebal-desc">라이브 포트폴리오에 전략 배포. 초기 배분은 설계도 v0.4에 따라 설정됨.</p>
           </div>
         </div>
       </div>
@@ -110,35 +110,35 @@ stage_num: 5
       <div class="sidebar-card">
         <div class="kill-switch-panel">
           <div class="kill-switch-header">
-            <p class="kill-label">Kill Switch</p>
+            <p class="kill-label">킬 스위치</p>
             <label class="toggle-switch">
               <input type="checkbox" id="kill-toggle">
               <span class="toggle-slider"></span>
             </label>
           </div>
-          <p class="caption" style="line-height:1.5;margin-bottom:1rem;">Automatically moves portfolio to 100% cash when maximum drawdown limit of <strong>−20%</strong> is breached.</p>
-          <p id="kill-status" style="font-size:0.6875rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--caption);">INACTIVE</p>
+          <p class="caption" style="line-height:1.5;margin-bottom:1rem;">최대 낙폭 한도 <strong>−20%</strong>가 침범될 때 자동으로 포트폴리오를 100% 현금으로 전환합니다.</p>
+          <p id="kill-status" style="font-size:0.6875rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--caption);">비활성</p>
         </div>
       </div>
 
       <!-- Alert Config -->
       <div class="sidebar-card">
-        <p class="sidebar-title">Alert Configuration</p>
+        <p class="sidebar-title">경고 설정</p>
         <div style="display:flex;flex-direction:column;gap:0.875rem;">
           <label style="display:flex;align-items:center;justify-content:space-between;font-size:0.875rem;">
-            <span>Drift threshold breach</span>
+            <span>드리프트 임계값 초과</span>
             <input type="checkbox" checked>
           </label>
           <label style="display:flex;align-items:center;justify-content:space-between;font-size:0.875rem;">
-            <span>Scheduled rebalance reminder</span>
+            <span>예정된 리밸런싱 알림</span>
             <input type="checkbox" checked>
           </label>
           <label style="display:flex;align-items:center;justify-content:space-between;font-size:0.875rem;">
-            <span>Drawdown exceeds −10%</span>
+            <span>낙폭 −10% 초과</span>
             <input type="checkbox" checked>
           </label>
           <label style="display:flex;align-items:center;justify-content:space-between;font-size:0.875rem;">
-            <span>Monthly performance report</span>
+            <span>월간 성과 보고서</span>
             <input type="checkbox">
           </label>
         </div>
@@ -146,36 +146,36 @@ stage_num: 5
 
       <!-- Portfolio KPIs -->
       <div class="sidebar-card">
-        <p class="sidebar-title">Live KPIs (YTD 2024)</p>
+        <p class="sidebar-title">실시간 KPI (2024년 연초 이후)</p>
         <div style="display:flex;flex-direction:column;gap:0.75rem;">
           <div style="display:flex;justify-content:space-between;align-items:baseline;">
-            <span class="caption">Return (YTD)</span>
+            <span class="caption">수익률 (연초 이후)</span>
             <span class="data-val" style="color:var(--success);">+12.4%</span>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--rule);padding-top:0.75rem;">
-            <span class="caption">Max Drawdown (YTD)</span>
+            <span class="caption">최대 낙폭 (연초 이후)</span>
             <span class="data-val" style="color:var(--accent);">−7.3%</span>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--rule);padding-top:0.75rem;">
-            <span class="caption">Portfolio Drift</span>
+            <span class="caption">포트폴리오 드리프트</span>
             <span class="data-val" style="color:var(--success);">3.2%</span>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--rule);padding-top:0.75rem;">
-            <span class="caption">Days Since Rebalance</span>
+            <span class="caption">리밸런싱 후 경과 일수</span>
             <span class="data-val">41</span>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--rule);padding-top:0.75rem;">
-            <span class="caption">Next Scheduled Rebalance</span>
-            <span style="font-size:0.8125rem;font-weight:500;">Dec 31, 2024</span>
+            <span class="caption">다음 예정 리밸런싱</span>
+            <span style="font-size:0.8125rem;font-weight:500;">2024년 12월 31일</span>
           </div>
         </div>
       </div>
 
       <!-- Cycle back prompt -->
       <div style="padding:1.25rem;border:1px solid var(--rule);background:var(--paper);text-align:center;">
-        <p class="caption" style="font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;">↻ SIDC Cycle</p>
-        <p class="caption" style="line-height:1.5;margin-bottom:1rem;">Stage 5 completes one cycle. Return to Stage 1 to refine your Spec Sheet with real performance data.</p>
-        <a href="stage-1.html" class="btn btn-outline btn-sm">Begin Cycle 2 →</a>
+        <p class="caption" style="font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;">↻ SIDC 사이클</p>
+        <p class="caption" style="line-height:1.5;margin-bottom:1rem;">5단계가 하나의 사이클을 완성합니다. 실제 성과 데이터로 명세서를 개선하기 위해 1단계로 돌아가세요.</p>
+        <a href="stage-1.html" class="btn btn-outline btn-sm">사이클 2 시작 →</a>
       </div>
     </div>
   </div>

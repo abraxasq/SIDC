@@ -1,44 +1,44 @@
 - id: 1
-  category: "METHODOLOGY"
-  title: "Why Your Portfolio Has Technical Debt"
-  excerpt: "Every undocumented assumption in your strategy is a bug waiting to compound. Here's how to find and fix it."
-  read_time: "8 min"
+  category: "방법론"
+  title: "포트폴리오에 기술부채가 생기는 이유"
+  excerpt: "전략의 모든 미문서화된 가정은 복잡하게 진행되는 버그입니다. 찾아내고 해결하는 방법을 알아보세요."
+  read_time: "8분"
   date: "2024-11-12"
   featured: true
   tag_color: "#2E5FA3"
 
 - id: 2
-  category: "STAGE GUIDE"
-  title: "The Architecture Stage: Designing Before You Build"
-  excerpt: "Correlation maps and allocation blueprints reduce emotional rebalancing decisions by up to 73%."
-  read_time: "12 min"
+  category: "단계 가이드"
+  title: "아키텍처 단계: 구현 전 설계"
+  excerpt: "상관관계 지도와 배분 설계도는 감정적 리밸런싱 결정을 최대 73%까지 줄입니다."
+  read_time: "12분"
   date: "2024-10-29"
   featured: false
   tag_color: "#1A1A1A"
 
 - id: 3
-  category: "CASE STUDY"
-  title: "How a Careless Rebalance Cost One Investor 4 Points of CAGR"
-  excerpt: "A real-world walkthrough of Stage 4 QA failures, what triggered them, and how systematic testing caught the drift."
-  read_time: "10 min"
+  category: "사례 연구"
+  title: "부주의한 리밸런싱이 투자자에게 CAGR 4포인트를 빼앗은 방법"
+  excerpt: "4단계 QA 실패의 실제 사례, 그 원인, 그리고 체계적인 테스트가 드리프트를 어떻게 조기 발견했는지."
+  read_time: "10분"
   date: "2024-10-08"
   featured: false
   tag_color: "#C01933"
 
 - id: 4
-  category: "TECHNICAL"
-  title: "Stress Testing: Beyond the Standard 10-Year Backtest"
-  excerpt: "Regime-based stress scenarios that expose the fragile assumptions hidden in every modern portfolio."
-  read_time: "15 min"
+  category: "기술"
+  title: "스트레스 테스트: 표준 10년 백테스트를 넘어서"
+  excerpt: "모든 현대 포트폴리오에 숨겨진 취약한 가정을 드러내는 레짐 기반 스트레스 시나리오."
+  read_time: "15분"
   date: "2024-09-21"
   featured: false
   tag_color: "#B08D57"
 
 - id: 5
-  category: "GLOSSARY"
-  title: "SIDC Lexicon: From Spec Sheet to Kill Switch"
-  excerpt: "Every term in the SIDC methodology defined with precision — and translated into plain language."
-  read_time: "5 min"
+  category: "용어 사전"
+  title: "SIDC 용어집: 명세서에서 킬스위치까지"
+  excerpt: "SIDC 방법론의 모든 용어를 정밀하게 정의하고 일상 언어로 번역합니다."
+  read_time: "5분"
   date: "2024-09-05"
   featured: false
   tag_color: "#6B6860"

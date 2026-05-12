@@ -3,48 +3,48 @@
 
   const questions = [
     {
-      text: "How clearly have you defined your target annual return?",
+      text: "목표 연간 수익률을 얼마나 명확히 정의하고 있나요?",
       options: [
-        { letter: 'A', text: "Clearly defined: specific % with written rationale", weight: 0 },
-        { letter: 'B', text: "Roughly in mind: \"I want to beat inflation\"", weight: 20 },
-        { letter: 'C', text: "Vague: \"As much as possible\"", weight: 35 },
-        { letter: 'D', text: "Never thought about it formally", weight: 50 }
+        { letter: 'A', text: "명확히 정의됨: 서면 근거가 있는 구체적인 %", weight: 0 },
+        { letter: 'B', text: "대략적으로 파악: \"인플레이션을 이기고 싶다\"", weight: 20 },
+        { letter: 'C', text: "막연함: \"최대한 많이\"", weight: 35 },
+        { letter: 'D', text: "공식적으로 생각해 본 적 없음", weight: 50 }
       ]
     },
     {
-      text: "Do you have a written investment strategy document?",
+      text: "서면으로 작성된 투자 전략 문서가 있나요?",
       options: [
-        { letter: 'A', text: "Yes — documented, reviewed regularly", weight: 0 },
-        { letter: 'B', text: "Partially — some notes but not systematic", weight: 20 },
-        { letter: 'C', text: "In my head but not written down", weight: 35 },
-        { letter: 'D', text: "No formal strategy exists", weight: 45 }
+        { letter: 'A', text: "있음 — 문서화되어 있고 정기적으로 검토됨", weight: 0 },
+        { letter: 'B', text: "일부만 — 메모가 있지만 체계적이지 않음", weight: 20 },
+        { letter: 'C', text: "머릿속에만 있고 기록되어 있지 않음", weight: 35 },
+        { letter: 'D', text: "공식적인 전략이 없음", weight: 45 }
       ]
     },
     {
-      text: "How do you handle portfolio rebalancing?",
+      text: "포트폴리오 리밸런싱을 어떻게 처리하나요?",
       options: [
-        { letter: 'A', text: "Rule-based: fixed schedule or drift threshold triggers", weight: 0 },
-        { letter: 'B', text: "Periodic: roughly once a year", weight: 15 },
-        { letter: 'C', text: "When I remember or feel anxious about markets", weight: 35 },
-        { letter: 'D', text: "I've never systematically rebalanced", weight: 50 }
+        { letter: 'A', text: "규칙 기반: 고정 일정 또는 드리프트 임계값 트리거", weight: 0 },
+        { letter: 'B', text: "주기적: 대략 연 1회", weight: 15 },
+        { letter: 'C', text: "기억나거나 시장에 불안할 때", weight: 35 },
+        { letter: 'D', text: "체계적으로 리밸런싱한 적 없음", weight: 50 }
       ]
     },
     {
-      text: "Have you stress-tested your strategy against a 2008-style scenario?",
+      text: "2008년 수준의 시나리오에 대해 전략을 스트레스 테스트한 적 있나요?",
       options: [
-        { letter: 'A', text: "Yes — formal backtest across multiple crisis periods", weight: 0 },
-        { letter: 'B', text: "Informally — I've done rough calculations", weight: 20 },
-        { letter: 'C', text: "No, but I plan to eventually", weight: 35 },
-        { letter: 'D', text: "No — I assume diversification is enough", weight: 45 }
+        { letter: 'A', text: "있음 — 여러 위기 기간에 걸친 공식 백테스트", weight: 0 },
+        { letter: 'B', text: "비공식적으로 — 대략적인 계산만 해봤음", weight: 20 },
+        { letter: 'C', text: "없음, 하지만 언젠가 할 계획", weight: 35 },
+        { letter: 'D', text: "없음 — 분산투자로 충분하다고 생각", weight: 45 }
       ]
     },
     {
-      text: "What is your maximum drawdown tolerance (the biggest loss you can accept)?",
+      text: "최대 낙폭 허용치(감당할 수 있는 가장 큰 손실)가 얼마인가요?",
       options: [
-        { letter: 'A', text: "Precisely defined: specific % limit with a kill-switch plan", weight: 0 },
-        { letter: 'B', text: "Roughly known: I can handle about -20% before panicking", weight: 15 },
-        { letter: 'C', text: "Uncertain — I've never tested my actual reaction to losses", weight: 30 },
-        { letter: 'D', text: "Unknown — I haven't considered maximum acceptable loss", weight: 45 }
+        { letter: 'A', text: "정밀하게 정의됨: 킬스위치 계획이 있는 구체적인 % 한도", weight: 0 },
+        { letter: 'B', text: "대략적으로 알고 있음: 패닉하기 전 약 -20%까지 감당 가능", weight: 15 },
+        { letter: 'C', text: "불확실 — 손실에 대한 실제 반응을 테스트한 적 없음", weight: 30 },
+        { letter: 'D', text: "모름 — 최대 허용 손실을 고려한 적 없음", weight: 45 }
       ]
     }
   ];
@@ -65,7 +65,7 @@
 
     container.innerHTML = questions.map((q, qi) => `
       <div class="quiz-step" data-step="${qi}">
-        <p class="quiz-q-num">Question ${qi + 1} of ${questions.length}</p>
+        <p class="quiz-q-num">${qi + 1} / ${questions.length}번 질문</p>
         <h2 class="quiz-question">${q.text}</h2>
         <div class="quiz-options">
           ${q.options.map((opt, oi) => `
@@ -76,9 +76,9 @@
           `).join('')}
         </div>
         <div class="quiz-nav" style="display:flex;gap:1rem;justify-content:space-between;align-items:center;">
-          ${qi > 0 ? `<button class="btn btn-outline btn-sm" onclick="DiagnosticQuiz.prev()">← Back</button>` : '<span></span>'}
+          ${qi > 0 ? `<button class="btn btn-outline btn-sm" onclick="DiagnosticQuiz.prev()">← 이전</button>` : '<span></span>'}
           <button class="btn btn-primary" id="next-btn-${qi}" onclick="DiagnosticQuiz.next()" disabled>
-            ${qi < questions.length - 1 ? 'Next →' : 'See My Score'}
+            ${qi < questions.length - 1 ? '다음 →' : '점수 확인하기'}
           </button>
         </div>
       </div>
@@ -118,7 +118,7 @@
     const fill = document.getElementById('progress-fill');
     const text = document.getElementById('progress-text');
     if (fill) fill.style.width = `${((currentStep) / questions.length) * 100}%`;
-    if (text) text.textContent = `${currentStep} of ${questions.length} complete`;
+    if (text) text.textContent = `${currentStep} / ${questions.length} 완료`;
   }
 
   function computeScore() {
@@ -130,10 +130,10 @@
   }
 
   function getScoreLabel(score) {
-    if (score <= 25) return { label: 'Well-Architected', color: '#2D6A4F', desc: 'Your investment approach is systematic and disciplined. Minor refinements remain.' };
-    if (score <= 50) return { label: 'Moderate Debt', color: '#F5A623', desc: 'You have structure, but gaps in documentation or testing are creating hidden risk.' };
-    if (score <= 75) return { label: 'High Technical Debt', color: '#C01933', desc: 'Significant undocumented assumptions and missing frameworks are compounding silently.' };
-    return { label: 'Critical Debt', color: '#C01933', desc: 'Your portfolio lacks foundational architecture. Each market cycle increases the risk of a structural failure.' };
+    if (score <= 25) return { label: '잘 설계된 포트폴리오', color: '#2D6A4F', desc: '투자 접근 방식이 체계적이고 규율 있습니다. 소소한 개선이 남아 있습니다.' };
+    if (score <= 50) return { label: '보통 수준의 기술부채', color: '#F5A623', desc: '구조는 있지만, 문서화 또는 테스트의 격차가 숨겨진 위험을 만들고 있습니다.' };
+    if (score <= 75) return { label: '높은 기술부채', color: '#C01933', desc: '상당한 미문서화된 가정과 누락된 프레임워크가 조용히 복잡해지고 있습니다.' };
+    return { label: '심각한 기술부채', color: '#C01933', desc: '포트폴리오에 기초 아키텍처가 없습니다. 각 시장 사이클은 구조적 실패의 위험을 높입니다.' };
   }
 
   function showResults() {
@@ -175,8 +175,8 @@
       </div>
 
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href="workspace.html" class="btn btn-primary">Start Your SIDC Workspace →</a>
-        <a href="diagnostic.html" class="btn btn-outline">Retake Assessment</a>
+        <a href="workspace.html" class="btn btn-primary">SIDC 워크스페이스 시작하기 →</a>
+        <a href="diagnostic.html" class="btn btn-outline">진단 재시작</a>
       </div>
     `;
 
@@ -186,16 +186,16 @@
   function getBreakdownItems(score) {
     const items = [];
 
-    if (answers[0] >= 30) items.push({ type: 'issue', text: '<strong>No CAGR target defined.</strong> Without a specific return target, you can\'t know if you\'re succeeding. Stage 1 fixes this.' });
-    else items.push({ type: 'ok', text: '<strong>Return target is defined.</strong> Good baseline. Stage 1 will formalize it into a binding Spec Sheet.' });
+    if (answers[0] >= 30) items.push({ type: 'issue', text: '<strong>CAGR 목표가 정의되지 않았습니다.</strong> 구체적인 수익 목표 없이는 성공 여부를 알 수 없습니다. 1단계에서 이를 해결합니다.' });
+    else items.push({ type: 'ok', text: '<strong>수익 목표가 정의되어 있습니다.</strong> 좋은 기준선입니다. 1단계에서 이를 구속력 있는 명세서로 공식화합니다.' });
 
-    if (answers[1] >= 30) items.push({ type: 'issue', text: '<strong>No written strategy.</strong> Undocumented strategies drift under market pressure. Stage 1–2 will give you a Blueprint.' });
-    else items.push({ type: 'ok', text: '<strong>Strategy is documented.</strong> A written record reduces emotional override. Stage 2 will elevate it to an Architecture.' });
+    if (answers[1] >= 30) items.push({ type: 'issue', text: '<strong>서면 전략이 없습니다.</strong> 미문서화된 전략은 시장 압박 하에서 흔들립니다. 1–2단계에서 설계도를 제공합니다.' });
+    else items.push({ type: 'ok', text: '<strong>전략이 문서화되어 있습니다.</strong> 서면 기록은 감정적 무시를 줄입니다. 2단계에서 아키텍처로 격상합니다.' });
 
-    if (answers[2] >= 30) items.push({ type: 'issue', text: '<strong>Rebalancing is reactive.</strong> Emotion-driven rebalancing destroys alpha. Stage 3 will systematize your rules.' });
-    else items.push({ type: 'ok', text: '<strong>Rebalancing is rule-based.</strong> Good discipline. Stage 5 will add drift monitoring to remove any remaining guesswork.' });
+    if (answers[2] >= 30) items.push({ type: 'issue', text: '<strong>리밸런싱이 반응적입니다.</strong> 감정 주도 리밸런싱은 알파를 파괴합니다. 3단계에서 규칙을 체계화합니다.' });
+    else items.push({ type: 'ok', text: '<strong>리밸런싱이 규칙 기반입니다.</strong> 훌륭한 규율입니다. 5단계에서 드리프트 모니터링을 추가하여 남은 추측을 제거합니다.' });
 
-    if (answers[3] >= 30) items.push({ type: 'issue', text: '<strong>No stress testing performed.</strong> Your strategy is untested in adverse conditions. Stage 4 will run crisis simulations.' });
+    if (answers[3] >= 30) items.push({ type: 'issue', text: '<strong>스트레스 테스트가 수행되지 않았습니다.</strong> 전략이 불리한 조건에서 테스트되지 않았습니다. 4단계에서 위기 시뮬레이션을 실행합니다.' });
 
     return items.slice(0, 3).map(item => `
       <div class="breakdown-item ${item.type}">
