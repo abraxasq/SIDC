@@ -1,23 +1,17 @@
 (function () {
   'use strict';
 
-  // ── FAQ Accordion ──
   function initFaq() {
     document.querySelectorAll('.faq-question').forEach(btn => {
       btn.addEventListener('click', function () {
         const item = this.closest('.faq-item');
         const isOpen = item.classList.contains('open');
-
-        // Close all
         document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open'));
-
-        // Toggle clicked
         if (!isOpen) item.classList.add('open');
       });
     });
   }
 
-  // ── Module Card Toggle (Stage 3) ──
   function initModuleCards() {
     document.querySelectorAll('.module-card').forEach(card => {
       card.addEventListener('click', function () {
@@ -26,61 +20,37 @@
     });
   }
 
-  // ── Kill Switch Confirmation ──
   function initKillSwitch() {
     const toggle = document.getElementById('kill-toggle');
     if (!toggle) return;
-
     toggle.addEventListener('change', function () {
       if (this.checked) {
-        const confirm = window.confirm(
-          'Activate Kill Switch?\n\nThis will trigger a move to cash when the defined drawdown threshold is breached. This action will be logged in your Operations Journal.'
-        );
-        if (!confirm) {
-          this.checked = false;
-          return;
-        }
-        const statusEl = document.getElementById('kill-status');
-        if (statusEl) {
-          statusEl.textContent = 'ARMED';
-          statusEl.style.color = '#C01933';
-        }
+        const confirmed = window.confirm('킬 스위치를 활성화하시겠습니까?\n\n정의된 낙폭 임계값이 침범될 때 현금으로 이동합니다. 이 작업은 운영 일지에 기록됩니다.');
+        if (!confirmed) { this.checked = false; return; }
+        const s = document.getElementById('kill-status');
+        if (s) { s.textContent = '활성화'; s.style.color = '#C01933'; }
       } else {
-        const statusEl = document.getElementById('kill-status');
-        if (statusEl) {
-          statusEl.textContent = 'INACTIVE';
-          statusEl.style.color = '#6B6860';
-        }
+        const s = document.getElementById('kill-status');
+        if (s) { s.textContent = '비활성'; s.style.color = '#6B6860'; }
       }
     });
   }
 
-  // ── Spec Sheet Preview (Stage 1) ──
   function initSpecSheet() {
     const cagrInput = document.getElementById('cagr-input');
     const mddInput = document.getElementById('mdd-input');
     const cagrDisplay = document.getElementById('spec-cagr');
     const mddDisplay = document.getElementById('spec-mdd');
-
     if (cagrInput && cagrDisplay) {
-      cagrInput.addEventListener('input', function () {
-        cagrDisplay.textContent = this.value + '%';
-      });
+      cagrInput.addEventListener('input', function () { cagrDisplay.textContent = this.value + '%'; });
     }
-
     if (mddInput && mddDisplay) {
-      mddInput.addEventListener('input', function () {
-        mddDisplay.textContent = '-' + this.value + '%';
-      });
+      mddInput.addEventListener('input', function () { mddDisplay.textContent = '-' + this.value + '%'; });
     }
   }
 
-  // ── Allocation Sliders (Stage 2) ──
   function initAllocationSliders() {
-    const sliders = document.querySelectorAll('.alloc-slider');
-    if (!sliders.length) return;
-
-    sliders.forEach(slider => {
+    document.querySelectorAll('.alloc-slider').forEach(slider => {
       slider.addEventListener('input', function () {
         const key = this.dataset.asset;
         const val = parseInt(this.value);
@@ -92,37 +62,21 @@
     });
   }
 
-  // ── Mobile Nav Toggle ──
-  function initMobileNav() {
-    const hamburger = document.getElementById('nav-toggle');
-    const nav = document.querySelector('.site-nav');
-    if (!hamburger || !nav) return;
-
-    hamburger.addEventListener('click', function () {
-      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-    });
-  }
-
-  // ── Active Nav Link Highlight ──
   function highlightActiveNav() {
     const path = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.site-nav a').forEach(link => {
       const href = link.getAttribute('href');
-      if (href === path || (path === '' && href === 'index.html')) {
+      if (href && (href.endsWith(path) || (path === '' && href.endsWith('index.html')))) {
         link.classList.add('active');
       }
     });
   }
 
-  // ── Smooth Scroll CTA ──
   function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', function (e) {
         const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
       });
     });
   }
@@ -133,7 +87,6 @@
     initKillSwitch();
     initSpecSheet();
     initAllocationSliders();
-    initMobileNav();
     highlightActiveNav();
     initSmoothScroll();
   });
