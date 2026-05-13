@@ -1,0 +1,49 @@
+- term: "CAGR"
+  full: "Compound Annual Growth Rate"
+  plain: "연평균 수익률"
+  definition: "지정된 기간 동안 복리 기준으로 투자가 매년 성장하는 비율. SIDC는 CAGR을 명세서의 기본 성공 지표로 간주합니다."
+
+- term: "MDD"
+  full: "Maximum Drawdown"
+  plain: "최대 낙폭"
+  definition: "주어진 기간 동안 포트폴리오 가치의 최대 고점 대비 저점 하락률. SIDC는 아키텍처를 구축하기 전에 MDD 허용치를 설정하도록 요구합니다 — 이것이 기본 위험 제약입니다."
+
+- term: "Technical Debt"
+  full: "Investment Technical Debt"
+  plain: "투자 기술부채"
+  definition: "포트폴리오에 누적된 미문서화된 가정, 즉흥적인 결정, 검증되지 않은 전략. 소프트웨어처럼 위기가 될 때까지 조용히 복잡해집니다."
+
+- term: "Spec Sheet"
+  full: "Investment Specification Sheet"
+  plain: "투자 명세서"
+  definition: "1단계의 산출물. CAGR 목표, MDD 허용치, 투자 기간, 제약 조건을 정의하는 서면 문서. 이후 모든 설계 결정의 구속력 있는 계약으로 기능합니다."
+
+- term: "Blueprint"
+  full: "Portfolio Architecture Blueprint"
+  plain: "포트폴리오 설계도"
+  definition: "2단계의 산출물. 목표 비중, 리밸런싱 트리거, 상관관계 가정을 포함한 자산 배분의 시각적·정량적 설명."
+
+- term: "QA Report"
+  full: "Quality Assurance Report"
+  plain: "품질 검증 보고서"
+  definition: "4단계의 산출물. 전략의 백테스트 결과, 스트레스 테스트 결과, 과적합 경고 점수에 대한 체계적인 요약."
+
+- term: "Sharpe Ratio"
+  full: "Sharpe Ratio"
+  plain: "위험조정 수익률"
+  definition: "위험(표준편차) 한 단위당 수익의 척도. Sharpe 1.0 이상이 일반적으로 적절한 것으로 간주되며, SIDC는 QA 게이트로 ≥ 1.2를 목표로 합니다."
+
+- term: "Portfolio Drift"
+  full: "Allocation Drift"
+  plain: "포트폴리오 드리프트"
+  definition: "시장 움직임으로 인한 실제 자산 비중과 목표 비중의 편차. SIDC의 5단계는 드리프트를 지속적으로 모니터링하고 사전 설정한 임계값을 초과할 때 경고를 발생시킵니다."
+
+- term: "Kill Switch"
+  full: "Portfolio Kill Switch"
+  plain: "손절 트리거"
+  definition: "지정된 손실 임계값이 침범될 때 포트폴리오를 자동으로 현금 또는 방어적 포지션으로 전환하는 사전 정의된 규칙. 5단계에서 구성해야 합니다."
+
+- term: "Rebalancing"
+  full: "Portfolio Rebalancing"
+  plain: "리밸런싱"
+  definition: "포트폴리오를 목표 설계도 비중으로 복원하기 위해 자산을 매수·매도하는 프로세스. SIDC는 달력 기반 리밸런싱과 임계값 기반 리밸런싱을 구별합니다."
